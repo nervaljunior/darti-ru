@@ -1,7 +1,3 @@
-
-
-{% block title %}Hello LoginController!{% endblock %}
-
 {% block body %}
 <style>
     body {
@@ -10,9 +6,30 @@
         background-image: linear-gradient(45deg, blue, cyan);
         margin: 0;
         display: flex;
-        justify-content: center;
+        flex-direction: column; /* Alterado para column para empilhar os elementos verticalmente */
         align-items: center;
         height: 100vh;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        max-width: 800px; /* Ajuste a largura máxima conforme necessário */
+        width: 100%;
+        margin: auto; /* Centraliza o contêiner */
+    }
+
+    .example-wrapper {
+        flex: 1; /* Ocupa o espaço restante */
+        margin-right: 20px; /* Adiciona margem à direita para separar a imagem do formulário */
+    }
+
+    img {
+        width: 300px; /* Ajuste o tamanho da imagem conforme necessário */
     }
 
     .login {
@@ -76,56 +93,48 @@
     }
 </style>
 
-<div class="example-wrapper">
+<div class="title">
     <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/2_PESQUISAS/DARTi/darti-ru/src/Controller/LoginController.php'|file_link(0) }}">src/Controller/LoginController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/2_PESQUISAS/DARTi/darti-ru/templates/login/index.html.twig'|file_link(0) }}">templates/login/index.html.twig</a></code></li>
-        
-    </ul>
 </div>
 
 <div class="container">
-    
-{% if erro %}
-<div>
+    <div class="example-wrapper">
+        <ul>
+            <img src="/assets/imagens/darti-ru.png">
+        </ul>
+    </div>
 
-{{erro.messageKey|trans(erro.messageData,'security')}}
+    {% if erro %}
+        <div>
+            {{erro.messageKey|trans(erro.messageData,'security')}}
+        </div>
+    {% endif %}
 
+    <div class="col-lg-4 offset-lg-4 jumbotron">
+        <div class="login">
+            <h1>Login</h1>
+            <form action="{{ path('app_login')}}" method="post">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="_username" class="form-control" value="{{lastUsername}}">
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" name="_password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Entrar</button>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="{{path('app_recuperar_senha')}}">Esqueceu a senha?</a>
+                </div>
+                <div class="google-login">
+                    <p>entre com <a href="#">Gmail <span class="material-icons">mail</span></a></p>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-
-<div class="col-lg-4 offset-lg-4 jumbotron">
-<div class="login">
-<h1>Login</h1>
-{% endif %}
-<form action="{{ path('app_login')}}" method="post">
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="_username" class="form-control" value="{{lastUsername}}">
-    </div>
-    <div class="form-group">
-        <label>Senha</label>
-        <input type="password" name="_password" class="form-control">
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-success">Entrar</button>
-    </div>
-
-    <div class="forgot-password">
-        <a href="{{path('app_recuperar_senha')}}">Esqueceu a senha?</a>
-    </div>
-    <div class="google-login">
-        <p>entre com <a href="#">Gmail <span class="material-icons">mail</span></a></p>
-    </div>
-</form>
-</div>
-
-</div>
-</div>
-
-
-
 
 {% endblock %}

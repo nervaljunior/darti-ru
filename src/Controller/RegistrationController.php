@@ -27,6 +27,10 @@ class RegistrationController extends AbstractController
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+        /* $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY'); */
+             /*    $this->denyAccessUnlessGranted('ROLE_USER'); */
+                $this->denyAccessUnlessGranted('ROLE_ADMIN');
+             /*    $this->denyAccessUnlessGranted('ROLE_NUTRICIONISTA'); */
         $user = new Usuarios();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
