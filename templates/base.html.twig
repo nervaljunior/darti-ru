@@ -65,8 +65,9 @@
 
                 </div>
                 <div class="">
-                    
-                   Olá, Usuario
+                {% if is_granted('IS_AUTHENTICATED_FULLY')%}
+                   Olá, {{app.user.nome}}
+                {% endif %}
                    <br>
                    
                 <div class="user">
