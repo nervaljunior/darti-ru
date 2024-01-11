@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="/assets/css/app.css">
         {% block stylesheets %}
         {% endblock %}
 
@@ -11,6 +12,74 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="navegation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="tittle">DARTi/RU</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_index') }}">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="tittle">Painel</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="tittle">Pessoas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="construct-outline"></ion-icon></span>
+                        <span class="tittle">Configurações</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="tittle">Senha</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="tittle">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label for="">
+                        <input type="text" placeholder="Pesquise aqui...">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+
+                </div>
+                <div class="">
+                    
+                   Olá, Usuario
+                   <br>
+                   
+                <div class="user">
+                    <img src="/assets/imagens/woman.png">
+                </div> 
+            </div>
+            </div>
+            {% block body %}{% endblock %}
+            </div>
     </body>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="/assets/js/app.js"></script>
+
 </html>
