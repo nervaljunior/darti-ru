@@ -1,0 +1,182 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avaliacao index{% endblock %}
+
+{% block body %}
+
+<style>
+
+    .caixa {
+            width: 200px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .muito-bom {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+        }
+
+        .bom {
+            background-color: #8BC34A; /* Verde fraco */
+            color: white;
+        }
+
+        .regular {
+            background-color: #FFC107; /* Amarelo */
+            color: #333;
+        }
+
+        .insatisfatorio {
+            background-color: #F44336; /* Vermelho */
+            color: white;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+ 
+<div class="container">
+    <div class="details">
+      
+    <h1>Avaliacao index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Data_avaliacao</th>
+                <th>Nota</th>
+                <th>Nutricionista_id</th>
+                <th>Restaurante_id</th>
+                <th>Observacoes</th>
+                <th>Avaliacao</th>
+                <th>Id_alimento</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for avaliacao in avaliacaos %}
+            <tr>
+                <td>{{ avaliacao.id }}</td>
+                <td>{{ avaliacao.dataAvaliacao ? avaliacao.dataAvaliacao|date('Y-m-d') : '' }}</td>
+                <td>{{ avaliacao.nota }}</td>
+                <td>{{ avaliacao.nutricionistaId }}</td>
+                <td>{{ avaliacao.restauranteId }}</td>
+                <td>{{ avaliacao.observacoes }}</td>
+                <td>{{ avaliacao.avaliacao }}</td>
+                <td>{{ avaliacao.idAlimento }}</td>
+                <td>
+                    <a href="{{ path('app_avaliacao_show', {'id': avaliacao.id}) }}">show</a>
+                    <a href="{{ path('app_avaliacao_edit', {'id': avaliacao.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_avaliacao_new') }}">Create new</a>
+
+
+        <form action="" method="post">
+            <div class="cardHeader">
+                <h2>Avaliação de Serviços</h2>
+            </div>
+    
+            {% for nomeCampo, rotulo in atividades %}
+                <label for="{{ nomeCampo }}">{{ rotulo }}:</label>
+                <input type="number" name="{{ nomeCampo }}" step="0.1" min="0" max="3" required><br>
+            {% endfor %}
+    
+            <input type="submit" value="Calcular Pontuação">
+        </form>
+        {% if pontuacaoTotal > 0 %}
+            <p>Pontuação Total para {{ unidade }}: {{ pontuacaoTotal }}</p>
+            <p>Classificação: {{ classificacao }}</p>
+        {% endif %}
+
+        {%
+            set classe = (pontuacaoTotal >= 8.1) ? 'muito-bom' :
+                         (pontuacaoTotal >= 7.64 and pontuacaoTotal <= 8.09) ? 'bom' :
+                         (pontuacaoTotal >= 6.75 and pontuacaoTotal <= 7.64) ? 'regular' :
+                         'insatisfatorio'
+        %}
+        
+            <form id="" method="post">
+                <div class="cardHeader">
+                    <h2>Avaliação de Alimento</h2>
+                </div>
+                    <label for="alimentName">Nome do Alimento:</label>
+                    <input type="text" id="alimentName" name="alimentName" value="<?php echo $rowAlimento['nome']; ?>" readonly>
+                    <br>
+                    <label for="alimentCategory">Categoria:</label>
+                    <input type="text" id="alimentCategory" name="alimentCategory" value="<?php echo $rowAlimento['categoria']; ?>" readonly>
+                    <br>
+                    <label for="avaliacao">Avaliação:</label>
+                    <select id="avaliacao" name="avaliacao" required>
+                        <option value="excelente">Excelente</option>
+                        <option value="bom">Bom</option>
+                        <option value="regular">Regular</option>
+                        <option value="ruim">Ruim</option>
+                    </select>
+                    <br>
+                    <label for="observacoes">Observações:</label>
+                    <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+                    <input type="hidden" name="id_alimento" value="<?php echo $id_alimento; ?>">
+                    <br>
+                    <input type="submit" value="Enviar Avaliação">
+            </form>    
+    
+            
+        <div class="caixa {{ classe }}">{{ mensagem }}</div>
+    </div>
+    <br>
+    
+
+</div>
+{% endblock %}

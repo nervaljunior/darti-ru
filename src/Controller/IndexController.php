@@ -15,8 +15,10 @@ class IndexController extends AbstractController
 /*         $this->denyAccessUnlessGranted('ROLE_USER');
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $this->denyAccessUnlessGranted('ROLE_NUTRICIONISTA'); */
+        $resultSelectAll = 10;
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
+            'resultSelectAll' => $resultSelectAll,
         ]);
     }
 }

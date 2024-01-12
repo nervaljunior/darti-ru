@@ -29,7 +29,7 @@
     }
 
     img {
-        width: 500px; /* Ajuste o tamanho da imagem conforme necessário */
+        width: 400px; /* Ajuste o tamanho da imagem conforme necessário */
     }
 
     .login {
@@ -103,6 +103,19 @@
         }
     }
 
+    .success-message {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #28a745; /* Cor de fundo verde ou a desejada */
+        color: #fff; /* Cor do texto */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        z-index: 999;
+        animation: fadeOut 5s ease-in-out forwards;
+    }
     .error-message {
         position: fixed; /* Torna a mensagem de erro fixa na tela */
         top: 0; /* Define a posição superior */
@@ -115,6 +128,20 @@
         text-align: center;
         z-index: 999; /* Garante que a mensagem de erro esteja acima de outros elementos */
         animation: fadeOut 5s ease-in-out forwards; /* Animação de fadeOut de 5 segundos com retenção no estado final */
+    }
+
+    .warning-message {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffc107; /* Cor de fundo amarela ou a desejada */
+        color: #333; /* Cor do texto */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        z-index: 999;
+        animation: fadeOut 5s ease-in-out forwards;
     }
 
     @keyframes fadeOut {
@@ -133,25 +160,29 @@
 </style>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<div class="title">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-</div>
 
 <div class="container">
+    
+    {% if erro %}
+    <div class="error-message">
+        {{erro.messageKey|trans(erro.messageData,'security')}}
+    </div>
+    {% endif %}
+    
+    {#<div class="title">
+        <h1>Hello {{ controller_name }}! ✅</h1>
+        
+    </div>#}
+    <div class="col-lg-5 offset-lg-0 jumbotron">
     <div class="example-wrapper">
         <ul>
-            <img src="/assets/imagens/darti-ru.jpg">
+            <img src="/assets/imagens/ru.png">
         </ul>
     </div>
-
-    {% if erro %}
-        <div class="error-message">
-            {{erro.messageKey|trans(erro.messageData,'security')}}
-        </div>
-    {% endif %}
-
-    <div class="col-lg-4 offset-lg-4 jumbotron">
+    </div>
+    <div class="col-lg-4 offset-lg-0 jumbotron">
         <div class="login">
             <h1>Login</h1>
             <form action="{{ path('app_login')}}" method="post">
