@@ -7,3 +7,7 @@ controllers:
 app_logout:
     path: /logout
     methods: GET
+
+usuarios_route:
+    path: /usuarios
+    controller: App\Controller\UsuariosController::index

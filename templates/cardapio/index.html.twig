@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cardapio index{% endblock %}
+
+{% block body %}
+    <h1>Cardapio index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Data</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cardapio in cardapios %}
+            <tr>
+                <td>{{ cardapio.id }}</td>
+                <td>{{ cardapio.data ? cardapio.data|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_cardapio_show', {'id': cardapio.id}) }}">show</a>
+                    <a href="{{ path('app_cardapio_edit', {'id': cardapio.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cardapio_new') }}">Create new</a>
+{% endblock %}

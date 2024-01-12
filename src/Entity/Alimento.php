@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AlimentoRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AlimentoRepository::class)]
@@ -24,6 +26,14 @@ class Alimento
 
     #[ORM\Column(length: 255)]
     private ?string $criterios = null;
+
+    #[ORM\OneToMany(mappedBy: 'id_alimento', targetEntity: Cardapio::class)]
+    private Collection $cardapios;
+
+    public function __construct()
+    {
+        $this->cardapios = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -74,6 +84,36 @@ class Alimento
     public function setCriterios(string $criterios): static
     {
         $this->criterios = $criterios;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Cardapio>
+     */
+    public function getCardapios(): Collection
+    {
+        return $this->cardapios;
+    }
+
+    public function addCardapio(Cardapio $cardapio): static
+    {
+        if (!$this->cardapios->contains($cardapio)) {
+            $this->cardapios->add($cardapio);
+            $cardapio->setIdAlimento($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCardapio(Cardapio $cardapio): static
+    {
+        if ($this->cardapios->removeElement($cardapio)) {
+            // set the owning side to null (unless already changed)
+            if ($cardapio->getIdAlimento() === $this) {
+                $cardapio->setIdAlimento(null);
+            }
+        }
 
         return $this;
     }

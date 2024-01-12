@@ -3,24 +3,82 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+
+<style>
+    .success-message {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #28a745; /* Cor de fundo verde ou a desejada */
+        color: #fff; /* Cor do texto */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        z-index: 999;
+        animation: fadeOut 5s ease-in-out forwards;
+    }
+    .error-message {
+        position: fixed; /* Torna a mensagem de erro fixa na tela */
+        top: 0; /* Define a posição superior */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Ajusta para centralizar completamente */
+        background-color: #ff6464; /* Cor de fundo vermelha ou a desejada */
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        z-index: 999; /* Garante que a mensagem de erro esteja acima de outros elementos */
+        animation: fadeOut 5s ease-in-out forwards; /* Animação de fadeOut de 5 segundos com retenção no estado final */
+    }
+
+    .warning-message {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffc107; /* Cor de fundo amarela ou a desejada */
+        color: #333; /* Cor do texto */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        z-index: 999;
+        animation: fadeOut 5s ease-in-out forwards;
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+        100.1% {
+            display: none; /* Adiciona display: none após a animação */
+        }
+    }
+
+</style>
+
     {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        <div class="error-message" role="alert">{{ flash_error }}</div>
     {% endfor %}
-<div class="container">
-    <h1>Register</h1>
-    
-    {{ form_errors(registrationForm) }}
-    
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.nome) }}
-    {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.telefone) }}
-    {{ form_row(registrationForm.tipo) }}
-    {{ form_row(registrationForm.plainPassword, {
-        label: 'Password'
-    }) }}
+
+    <div class="container">
+        <h1>Register</h1>
+
+        {{ form_errors(registrationForm) }}
+
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.nome) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.telefone) }}
+        {{ form_row(registrationForm.tipo) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
         {{ form_row(registrationForm.agreeTerms) }}
-        
+
         <button type="submit" class="btn btn-primary">Register</button>
         {{ form_end(registrationForm) }}
     </div>

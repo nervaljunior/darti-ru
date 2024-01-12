@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cardapio{% endblock %}
+
+{% block body %}
+    <h1>Cardapio</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cardapio.id }}</td>
+            </tr>
+            <tr>
+                <th>Data</th>
+                <td>{{ cardapio.data ? cardapio.data|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cardapio_index') }}">back to list</a>
+
+    <a href="{{ path('app_cardapio_edit', {'id': cardapio.id}) }}">edit</a>
+
+    {{ include('cardapio/_delete_form.html.twig') }}
+{% endblock %}

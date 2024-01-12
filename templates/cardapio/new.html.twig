@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cardapio{% endblock %}
+
+{% block body %}
+    <h1>Create new Cardapio</h1>
+
+    {{ include('cardapio/_form.html.twig') }}
+
+    <a href="{{ path('app_cardapio_index') }}">back to list</a>
+{% endblock %}

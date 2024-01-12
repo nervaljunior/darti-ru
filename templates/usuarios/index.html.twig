@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuarios index{% endblock %}
+
+{% block body %}
+    <h1>Usuarios index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Tipo</th>
+                <th>IsVerified</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.roles ? usuario.roles|json_encode : '' }}</td>
+                <td>{{ usuario.password }}</td>
+                <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.telefone }}</td>
+                <td>{{ usuario.tipo }}</td>
+                <td>{{ usuario.isVerified ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_usuarios_show', {'id': usuario.id}) }}">show</a>
+                    <a href="{{ path('app_usuarios_edit', {'id': usuario.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ '/register' }}">Create new</a>
+{% endblock %}
