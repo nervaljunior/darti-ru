@@ -235,3 +235,322 @@ dessa forma irá criar uma media de classificação
 | Bom                 | 8,09 a 7,65 pontos       | <span style="color:lightgreen">Verde Fraco</span> |
 | Regular             | 7,64 a 6,75 pontos       | <span style="color:yellow">Amarelo</span> |
 | Insatisfatório      | Abaixo de 6,75 pontos    | <span style="color:red">Vermelho</span> |
+
+
+---
+
+# ANEXO 1 - PADRÃO DE IDENTIDADE E QUALIDADE (PIQ) DOS GÊNEROS UTILIZADOS NO RESTAURANTE UNIVERSITÁRIO DA UNIVERSIDADE FEDERAL DO MARANHÃO: HORTIFRUTIGRANJEIROS, CARNES, ESTOCÁVEIS, MATERIAL DE LIMPEZA E DESCARTÁVEIS.
+
+## HORTIFRUTIGRANJEIROS
+
+### DESCRIÇÃO DO PRODUTO
+
+- **Abacaxi**: maduro, íntegro, de 1ª qualidade, uniforme (polpa firme, doce, sem danos físicos e mecânicos) sem sujidades (ausência de terras ou corpos estranhos), sem parasitas (insetos, larvas e moluscos).
+
+### CRITÉRIOS DE RECEBIMENTO
+
+Aspectos a serem analisados:
+
+- Grau de maturação
+- Consistência da polpa
+- Adocicada e firme
+- Ausência de danos físicos e mecânicos
+- Uniformidade de tamanho
+- Ausência de parasitas (insetos, larvas e moluscos)
+- Ausência de sujidades (terras ou corpos estranhos aderentes à superfície)
+
+### AVALIAÇÃO
+
+| Critério                       | Avaliação |
+|---------------------------------|-----------|
+| Grau de maturação               |           |
+| Consistência da polpa           |           |
+| Adocicada e firme               |           |
+| Ausência de danos físicos        |           |
+| Uniformidade de tamanho         |           |
+| Ausência de parasitas            |           |
+| Ausência de sujidades            |           |
+
+### JUSTIFICATIVA/MEDIDA CORRETIVA
+
+- [ ] Aprovação
+- [ ] Não Aprovação
+
+## ALGORITMO PARA O FORMULÁRIO
+
+1. Solicitar a avaliação de cada critério.
+2. Registrar a justificativa ou medida corretiva, se necessário.
+3. Marcar a aprovação ou não aprovação.
+4. Repetir o processo para cada produto e critério.
+
+---
+
+# ANEXO 2 - CRITÉRIOS DE TEMPERATURA E TEMPO NO RESTAURANTE UNIVERSITÁRIO CENTRAL E CENTRO PEDAGÓGICO PAULO FREIRE
+
+## Etapas e Critérios
+
+| Etapas                                                   | Temperatura           | Tempo             |
+|----------------------------------------------------------|-----------------------|-------------------|
+| Temperaturas de Armazenamento de Alimentos Preparados     |                       |                   |
+| - Refrigerados                                           | 5ºC                   |                   |
+| - Congelados                                             | -18ºC                 |                   |
+| Conservação da Temperatura das Preparações para Distribuição |                       |                   |
+| - Preparações Quentes                                    | Superior a 60ºC       | Máximo 6 horas    |
+| - Preparações Frias                                      | Inferior a 5ºC        |                   |
+| Temperatura dos Equipamentos e Alimentos                  |                       |                   |
+| - Alimentos ou preparações congeladas                     | Igual ou inferior a -18ºC |                   |
+| - Alimentos ou preparações refrigerados                   | Inferior a 5ºC        |                   |
+| - Alimentos ou preparações quentes                        | Superior a 60ºC       |                   |
+| Temperatura de Preparo do Alimento                         | Mínimo de 70 ºC¹     |                   |
+| - Óleos e gorduras aquecidos                               | Até 180ºC²          |                   |
+| Temperatura de Descongelamento                            | Inferior a 5ºC        |                   |
+| Temperatura de Resfriamento de Alimento Preparado          |                       |                   |
+| - Resfriamento de alimento aquecido preparado              | Redução de 60ºC a 10 ºC | 2 horas           |
+| - Refrigeração inferior a 5ºC                             | 5 dias                |
+| - Congelamento igual ou inferior a -18 ºC                 |                       |
+
+### Notas de Rodapé:
+
+¹ Temperaturas inferiores podem ser utilizadas no tratamento térmico desde que as combinações de tempo e temperatura sejam suficientes para assegurar a qualidade higiênico-sanitária dos alimentos.
+
+² Deverá ser substituído imediatamente sempre que houver alteração evidente das características físico-químicas ou sensoriais, tais como aroma e sabor, e formação intensa de espuma e fumaça.
+
+## Prazo de Validade para Produtos Congelados e Refrigerados
+
+### Produtos Congelados
+
+| Temperatura Recomendada (Graus Celsius) | Prazo de Validade (Dias) |
+|-----------------------------------------|---------------------------|
+| 0 a -5                                 | 10                        |
+| -6 a -10                                | 20                        |
+| -11 a -18                               | 30                        |
+| <-18                                    | 90                        |
+
+### Produtos Refrigerados
+
+| Produtos Resfriados                                | Temperatura Recomendada (Graus Celsius) | Prazo de Validade (Dias) |
+|----------------------------------------------------|-----------------------------------------|---------------------------|
+| Pescados e seus produtos                            | Máximo 2(dois graus)                     | 3                         |
+| Manipulados crus.                                    | Máximo 2(dois graus)                     | 1                         |
+| Pescados pós cocção.                                 | Máximo 4 (quatro graus)                  | 3                         |
+| Alimentos pós cocção, Exceto pescados.               | Máximo 4 (quatro graus)                  | 3                         |
+| Carnes bovina e suína, aves, entre outras, e seus produtos manipulados crus. | Máximo 4 (quatro graus)                  | 3                         |
+| Espetos mistos, bife rolê, carnes empanadas cruas e preparações com carne moída | Máximo 4 (quatro graus)                  | 2                         |
+| Frios e embutidos, fatiados, picados ou moídos        | Máximo 4 (quatro graus)                  | 3                         |
+| Maionese e misturas de maionese com outros alimentos | Máximo 4 (quatro graus)                  | 2                         |
+| Sobremesas e outras preparações com laticínios       | Máximo 4 (quatro graus)                  | 3                         |
+| Demais alimentos preparados                          | Máximo 4 (quatro graus)                  | 3                         |
+| Produtos de panificação e confeitaria com coberturas e recheios, prontos para o consumo | Máximo 5 (cinco graus)                  | 5                         |
+| Frutas, verduras e legumes higienizados, fracionados ou descascados; sucos e polpas de frutas | Máximo 5 (cinco graus)                  | 3                         |
+| Leite e derivados                                     | Máximo 7 (sete graus)                    | 5                         |
+| Ovos                                                 | Máximo 10 (dez graus)                    | 7                         |
+
+Referência: Portaria CVS-5/2013 Centro de Vigilância Sanitária da Secretaria de Estado da Saúde de São Paulo, de 09 de Abril de 2013.
+
+---
+
+# ANEXO 2-A - CRITÉRIOS ESPECÍFICOS DE TEMPERATURAS E TEMPO NOS RESTAURANTES UNIVERSITÁRIOS
+
+## Etapas e Critérios Específicos
+
+| Etapas                                | Temperatura      | Tempo               |
+|---------------------------------------|------------------|---------------------|
+| Água do balcão térmico                | 80 a 90º C       | -                   |
+| Balcão refrigerado                   | Máximo 8º C      | -                   |
+| Câmara frigorífica para resíduos sólidos | Máximo 10º C   | -                   |
+| Cocção no centro do alimento          | 70º C            | 2 minutos           |
+|                                        | 74º C            | 5 segundos          |
+| Distribuição de alimentos quentes      | Mínimo 60º C     | Máximo 6 horas      |
+| Distribuição de alimentos refrigerados | Máximo 10º C     | Máximo 4 horas      |
+| Espera para distribuição de alimentos quentes | Mínimo 65º C | -                   |
+| Espera para distribuição de alimentos frios | Máximo 10º C  | -                   |
+| Reaquecimento de alimentos (temperatura interna) | 74º C  | 5 segundos          |
+| Sobremesas refrigeradas (armazenamento) | Máximo 4º C    | 72 horas            |
+| Sucos e polpas resfriados             | Máximo 10º C     | Indicado pelo fabricante |
+| Transporte de alimentos quentes        | Mínimo 60 º C    | -                   |
+| Transporte de alimentos frios         | Máximo 10º C     | -                   |
+
+## Referências
+
+- Portaria CVS-5/2013 Centro de Vigilância Sanitária da Secretaria de Estado da Saúde de São Paulo, de 09 de Abril de 2013.
+- Resolução – RDC/ ANVISA n° 216, de 15 de setembro de 2004.
+
+---
+
+# ANEXO 3 - AVALIAÇÃO DOS CARDÁPIOS DO RESTAURANTE UNIVERSITÁRIO
+
+## Refeição: Almoço (   )   Jantar (   )
+
+**Data:** [Insira a data aqui]
+
+| Preparações         | Avaliação               |
+|----------------------|-------------------------|
+| **Salada**           |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+| **Prato Principal**  |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+| **Guarnição**        |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+| **Cereal**           |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+| **Leguminosa**       |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+| **Sobremesa**        |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+
+### Justificativa/Medida Corretiva
+
+- [ ] Em acordo com o cardápio
+- [ ] Aprovação
+  - [ ] Sim
+  - [ ] Não
+
+**Fiscal Responsável:** [Insira o nome do fiscal responsável]
+
+---
+
+Este formulário destina-se à avaliação dos cardápios do Restaurante Universitário para as refeições de almoço ou jantar. Preencha as avaliações para cada categoria de preparação, indique se está de acordo com o cardápio e, se necessário, forneça justificativas ou medidas corretivas. Marque a aprovação e indique o fiscal responsável.
+
+
+
+---
+
+
+
+# ANEXO 3-A - AVALIAÇÃO DO CARDÁPIO DO COLÉGIO UNIVERSITÁRIO
+
+## Refeição: Lanche Matutino (    )   Lanche Vespertino (    )
+
+**Data:** [Insira a data aqui]
+
+| Preparação           | Avaliação               |
+|-----------------------|-------------------------|
+|                      |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+|                      |                         |
+
+### Justificativa/Medida Corretiva
+
+- [ ] Em acordo com o cardápio
+- [ ] Aprovação
+  - [ ] Sim
+  - [ ] Não
+
+**Fiscal Responsável:** [Insira o nome do fiscal responsável]
+
+---
+
+Este formulário destina-se à avaliação do cardápio do Colégio Universitário para as refeições de lanche matutino ou lanche vespertino. Preencha as avaliações para cada preparação, indique se está de acordo com o cardápio e, se necessário, forneça justificativas ou medidas corretivas. Marque a aprovação e indique o fiscal responsável.
+
+---
+
+# ANEXO 4 - PROTOCOLO DE COLETA DE AMOSTRAS DE ALIMENTOS PARA CONTROLE BACTERIOLÓGICO
+
+Para realizar a coleta de amostras de alimentos para controle bacteriológico, siga o protocolo abaixo de acordo com a referência:
+
+## Procedimento de Coleta
+
+1. Proceda à higienização das mãos.
+2. Identifique as embalagens de primeiro uso ou sacos esterilizados/desinfetados com o nome do estabelecimento, nome do produto, data, horário e nome do responsável pela coleta.
+3. Abra a embalagem ou o saco sem tocá-lo internamente e sem soprá-lo.
+4. Coloque a amostra do alimento, garantindo no mínimo 100 (cem) gramas.
+5. Utilize uma embalagem separada para cada tipo de preparação.
+6. Se possível, retire o ar da embalagem e feche-a.
+7. Guarde a amostra por 72 (setenta e duas) horas, observando as temperaturas a seguir:
+   - Alimentos distribuídos sob refrigeração: Máximo 4º C (quatro graus Celsius)
+   - Alimentos distribuídos quentes: Sob congelamento a -18ºC (dezoito graus Celsius negativos)
+   - Alimentos líquidos: Sob refrigeração a 4º C (quatro graus Celsius)
+
+## Referência
+
+- **Instrução Normativa DIVISA/SVS/DF Nº 16, de 23 de maio de 2017.**
+
+Este protocolo tem como objetivo garantir a correta coleta de amostras de alimentos para controle bacteriológico, seguindo as normas estabelecidas na referência mencionada.
+
+
+---
+
+# ANEXO 5 - ROTINA DE FISCALIZAÇÃO DO RESTAURANTE UNIVERSITÁRIO CENTRAL E SUBUNIDADES
+
+## Restaurante Universitário Central
+
+### Setor: Recebimento de Gêneros
+
+**Rotinas Diárias:**
+1. **Conferência das Condições Higiênicas da Área de Recebimento:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+2. **Conferência das Condições Higiênicas do Entregador e do Transporte:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+3. **Conferência dos Aspectos Qualitativos Seguindo os Critérios do PIQ:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+4. **Conferência dos Gêneros Quanto aos Aspectos Quantitativos e Pesagem:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+5. **Conferência da Rotulagem e Registro da Temperatura:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+6. **Rejeição de Produtos Inaceitáveis:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+7. **Conferência da Retirada das Embalagens e Lavagem dos Gêneros:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+8. **Conferência do Acondicionamento e Transporte dos Gêneros:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+9. **Conferência da Higienização dos Monoblocos e Áreas de Armazenamento:**
+   - Avaliação:
+     - [ ] Adequado
+     - [ ] Inadequado
+   - Justificativa/Medida Corretiva:
+
+### Fiscal Responsável:
+Fiscal Responsável: [Insira o nome do fiscal responsável]
+
+---
+
+Este documento descreve as rotinas diárias de fiscalização no setor de Recebimento de Gêneros do Restaurante Universitário Central. Cada item deve ser avaliado, indicando se a rotina está adequada ou inadequada, e fornecendo justificativas ou medidas corretivas quando necessário. O fiscal responsável deve assinar ao final da avaliação.
