@@ -3,17 +3,102 @@
 {% block title %}Hello IndexController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <div class="jumbotron mt-4">
+                <div class="row">
+                    <div class="details">
+                        <form id="avaliacaoForm">
+                            <div class="cardHeader">
+                                <h2 class="lead">Escolha uma unidade para avaliação:</h2>
+                            </div>
+                            <label for="unidade_id">Unidade:</label>
+                            <select id="unidade_id" name="unidade_id" required>
+                                <option value="1">Restaurante Universitário - Campus Dom Delgado</option>
+                                <option value="2">Centro Pedagógico Paulo Freire</option>
+                                <option value="3">Colégio Universitário</option>
+                                <option value="4">Fábrica Santa Amélia</option>
+                                <option value="5">Faculdade de Medicina</option>
+                            </select>
 
-    This friendly message is coming from:
-    <ul>
+                            <label for="data_fiscalizacao">Data de Fiscalização:</label>
+                            <input type="date" id="data_fiscalizacao" name="data_fiscalizacao" required>
 
-    </ul>
-</div>
+                            <label for="observacoes">Observações:</label>
+                            <br>
+                            <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+                            <br>
+                            <button type="button" class=btn-input onclick="avaliacao()">Iniciar Avaliação</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCustomers">
+
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Cardápio do Dia</h2>
+                        <button href="{{ path('app_alimento_index') }}" id="todos_alimentos" name="tabela_alimentos" class="btn">Ver Todos</button>
+                    </div>
+                    {# Exibe os alimentos existentes #}
+            {% if resultSelectAll %}
+            <br>
+            <table>
+            <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Calorias</th>
+            <th>Ações</th>
+            </tr>
+            
+            {% for row in resultSelectAll %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.nome }}</td>
+                <td>{{ row.categoria }}</td>
+                <td>{{ row.calorias }}</td>
+                <td>
+                    <button class="evaluate-btn" onclick="openEvaluateDialog({{ row.id }})">Avaliar</button>
+                </td>
+            </tr>
+            {% endfor %}
+            
+            </table>
+            {% endif %}
+            
+                </div>
+            
+            </div>
+
+    <script>
+        function avaliacao() {
+            // Obter o valor selecionado
+            var unidadeId = document.getElementById("unidade_id").value;
+
+            // Redirecionar para a rota dinâmica
+            window.location.href = "{{ path('app_avaliacao_index', {'unidade_id': '__unidadeId__'}) }}".replace('__unidadeId__', unidadeId);
+        }
+
+        //menu toggle
+        let toggle = document.querySelector('.toggle');
+        let navegation = document.querySelector('.navegation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navegation.classList.toggle('active')
+            main.classList.toggle('active')
+        }
+        
+        let list = document.querySelectorAll('.navegation li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) => 
+        item.addEventListener('mouseover', activeLink));
+    </script>
 {% endblock %}
+
+
