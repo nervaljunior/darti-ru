@@ -29,6 +29,8 @@ class UsuariosController extends AbstractController
     #[Route('/new', name: 'app_usuarios_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $usuario = new Usuarios();
         $form = $this->createForm(UsuariosType::class, $usuario);
         $form->handleRequest($request);
@@ -49,6 +51,8 @@ class UsuariosController extends AbstractController
     #[Route('/{id}', name: 'app_usuarios_show', methods: ['GET'])]
     public function show(Usuarios $usuario): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('usuarios/show.html.twig', [
             'usuario' => $usuario,
         ]);
@@ -57,6 +61,8 @@ class UsuariosController extends AbstractController
     #[Route('/{id}/edit', name: 'app_usuarios_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Usuarios $usuario, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(UsuariosType::class, $usuario);
         $form->handleRequest($request);
 
@@ -75,6 +81,8 @@ class UsuariosController extends AbstractController
     #[Route('/{id}', name: 'app_usuarios_delete', methods: ['POST'])]
     public function delete(Request $request, Usuarios $usuario, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         if ($this->isCsrfTokenValid('delete'.$usuario->getId(), $request->request->get('_token'))) {
             $entityManager->remove($usuario);
             $entityManager->flush();

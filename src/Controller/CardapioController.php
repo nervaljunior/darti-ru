@@ -28,6 +28,8 @@ class CardapioController extends AbstractController
     #[Route('/new', name: 'app_cardapio_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $cardapio = new Cardapio();
         $form = $this->createForm(CardapioType::class, $cardapio);
         $form->handleRequest($request);
@@ -48,6 +50,8 @@ class CardapioController extends AbstractController
     #[Route('/{id}', name: 'app_cardapio_show', methods: ['GET'])]
     public function show(Cardapio $cardapio): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('cardapio/show.html.twig', [
             'cardapio' => $cardapio,
         ]);
@@ -56,6 +60,8 @@ class CardapioController extends AbstractController
     #[Route('/{id}/edit', name: 'app_cardapio_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Cardapio $cardapio, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(CardapioType::class, $cardapio);
         $form->handleRequest($request);
 
@@ -74,6 +80,8 @@ class CardapioController extends AbstractController
     #[Route('/{id}', name: 'app_cardapio_delete', methods: ['POST'])]
     public function delete(Request $request, Cardapio $cardapio, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         if ($this->isCsrfTokenValid('delete'.$cardapio->getId(), $request->request->get('_token'))) {
             $entityManager->remove($cardapio);
             $entityManager->flush();

@@ -11,6 +11,7 @@ class ConfiguracaoController extends AbstractController
     #[Route('/configuracao', name: 'app_configuracao')]
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('configuracao/index.html.twig', [
             'controller_name' => 'ConfiguracaoController',
         ]);

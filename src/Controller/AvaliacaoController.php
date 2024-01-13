@@ -17,6 +17,7 @@ class AvaliacaoController extends AbstractController
     #[Route('/', name: 'app_avaliacao_index', methods: ['GET'])]
     public function index(Request $request,AvaliacaoRepository $avaliacaoRepository): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $pontuacaoTotal = 0;
         $classificacao = '';
         $mensagem = '';

@@ -93,13 +93,9 @@
     }
 
 
-    @media screen and (max-width: 600px) {
-        .container {
-            padding: 0 10px; 
-        }
-
-        img {
-            max-width: none; 
+    @media screen and (max-width: 1200px) {
+        #media {
+            display: none;
         }
     }
 
@@ -175,7 +171,7 @@
         <h1>Hello {{ controller_name }}! ✅</h1>
         
     </div>#}
-    <div class="col-lg-5 offset-lg-0 jumbotron">
+    <div id="media" class="col-lg-5 offset-lg-0 jumbotron">
     <div class="example-wrapper">
         <ul>
             <img src="/assets/imagens/ru.png">

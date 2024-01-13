@@ -134,7 +134,9 @@
                 {#<th>Password</th>#}
                 {#<th>Tipo</th>#}
                 {#<th>IsVerified</th>#}
+                {% if is_granted('ROLE_ADMIN')%}
                 <th>Ações</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -148,18 +150,22 @@
                 {#<td>{{ usuario.password }}</td>#}
                 {#<td>{{ usuario.tipo }}</td>#}
                 {#<td>{{ usuario.isVerified ? 'Yes' : 'No' }}</td>#}
+                {% if is_granted('ROLE_ADMIN')%}
                 <td>
                     <a href="{{ path('app_usuarios_show', {'id': usuario.id}) }}" class="btn btn-info">Show</a>
                     <a href="{{ path('app_usuarios_edit', {'id': usuario.id}) }}" class="btn btn-warning">Edit</a>
                 </td>
+                {% endif %}
             </tr>
-        {% else %}
+            {% else %}
             <tr>
                 <td colspan="9">No records found</td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
-
+    
+    {% if is_granted('ROLE_ADMIN')%}
     <a href="{{ '/register' }}" class="btn btn-success">Create new</a>
+    {% endif %}
 {% endblock %}

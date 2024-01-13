@@ -29,6 +29,8 @@ class AlimentoController extends AbstractController
     #[Route('/new', name: 'app_alimento_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $alimento = new Alimento();
         $form = $this->createForm(AlimentoType::class, $alimento);
         $form->handleRequest($request);
@@ -49,6 +51,8 @@ class AlimentoController extends AbstractController
     #[Route('/{id}', name: 'app_alimento_show', methods: ['GET'])]
     public function show(Alimento $alimento): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('alimento/show.html.twig', [
             'alimento' => $alimento,
         ]);
@@ -57,6 +61,8 @@ class AlimentoController extends AbstractController
     #[Route('/{id}/edit', name: 'app_alimento_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Alimento $alimento, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(AlimentoType::class, $alimento);
         $form->handleRequest($request);
 
@@ -75,6 +81,8 @@ class AlimentoController extends AbstractController
     #[Route('/{id}', name: 'app_alimento_delete', methods: ['POST'])]
     public function delete(Request $request, Alimento $alimento, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         if ($this->isCsrfTokenValid('delete'.$alimento->getId(), $request->request->get('_token'))) {
             $entityManager->remove($alimento);
             $entityManager->flush();

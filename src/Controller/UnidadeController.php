@@ -17,6 +17,7 @@ class UnidadeController extends AbstractController
     #[Route('/', name: 'app_unidade_index', methods: ['GET'])]
     public function index(UnidadeRepository $unidadeRepository): Response
     {
+        
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         /*         $this->denyAccessUnlessGranted('ROLE_USER');
                 $this->denyAccessUnlessGranted('ROLE_ADMIN');
@@ -29,6 +30,8 @@ class UnidadeController extends AbstractController
     #[Route('/new', name: 'app_unidade_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $unidade = new Unidade();
         $form = $this->createForm(UnidadeType::class, $unidade);
         $form->handleRequest($request);
@@ -49,6 +52,8 @@ class UnidadeController extends AbstractController
     #[Route('/{id}', name: 'app_unidade_show', methods: ['GET'])]
     public function show(Unidade $unidade): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('unidade/show.html.twig', [
             'unidade' => $unidade,
         ]);
@@ -57,6 +62,8 @@ class UnidadeController extends AbstractController
     #[Route('/{id}/edit', name: 'app_unidade_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Unidade $unidade, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(UnidadeType::class, $unidade);
         $form->handleRequest($request);
 
@@ -75,6 +82,8 @@ class UnidadeController extends AbstractController
     #[Route('/{id}', name: 'app_unidade_delete', methods: ['POST'])]
     public function delete(Request $request, Unidade $unidade, EntityManagerInterface $entityManager): Response
     {
+        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         if ($this->isCsrfTokenValid('delete'.$unidade->getId(), $request->request->get('_token'))) {
             $entityManager->remove($unidade);
             $entityManager->flush();
