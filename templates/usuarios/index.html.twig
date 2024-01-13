@@ -8,32 +8,33 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Roles</th>
-                <th>Password</th>
+                {#<th>Id</th>#}
                 <th>Nome</th>
+                <th>Email</th>
                 <th>Telefone</th>
                 <th>Tipo</th>
-                <th>IsVerified</th>
-                <th>actions</th>
+                {#<th>Password</th>#}
+                {#<th>Tipo</th>#}
+                {#<th>IsVerified</th>#}
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
         {% for usuario in usuarios %}
             <tr>
-                <td>{{ usuario.id }}</td>
-                <td>{{ usuario.email }}</td>
-                <td>{{ usuario.roles ? usuario.roles|json_encode : '' }}</td>
-                <td>{{ usuario.password }}</td>
+                {#<td>{{ usuario.id }}</td>#}
                 <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.email }}</td>
                 <td>{{ usuario.telefone }}</td>
-                <td>{{ usuario.tipo }}</td>
-                <td>{{ usuario.isVerified ? 'Yes' : 'No' }}</td>
+                <td>{{ usuario.roles ? usuario.roles | map(role => role | replace({'ROLE_': ''})) | join(', ') : '' }}</td>
+                {#<td>{{ usuario.password }}</td>#}
+                {#<td>{{ usuario.tipo }}</td>#}
+                {#<td>{{ usuario.isVerified ? 'Yes' : 'No' }}</td>#}
                 <td>
                     <a href="{{ path('app_usuarios_show', {'id': usuario.id}) }}">show</a>
                     <a href="{{ path('app_usuarios_edit', {'id': usuario.id}) }}">edit</a>
                 </td>
+                
             </tr>
         {% else %}
             <tr>
