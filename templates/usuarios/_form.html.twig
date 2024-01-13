@@ -1,122 +1,63 @@
 {{ form_start(form) }}
-<style>
 
-    .edit-btn,
-    .delete-btn,
-    .evaluate-btn {
-        background-color: #007bff;
-        color: #fff;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        margin-right: 5px;
-    }
+    <div class="form-group">
+        {{ form_label(form.email, 'Email') }}
+        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+    </div>
 
-    .edit-btn:hover,
-    .delete-btn:hover,
-    .evaluate-btn:hover {
-        background-color: #0056b3;
-    }
+    <div class="form-group">
+        {{ form_label(form.password, 'Password') }}
+        {{ form_widget(form.password, {'attr': {'class': 'form-control', 'autocomplete': 'new-password'}, 'type': 'password'}) }}
+    </div>
 
-    .evaluate-dialog {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        background-color: #fff;
-        z-index: 999;
-    }
+    <div class="form-group">
+        {{ form_label(form.nome, 'Nome') }}
+        {{ form_widget(form.nome, {'attr': {'class': 'form-control'}}) }}
+    </div>
 
-    .evaluate-dialog textarea {
-        width: 100%;
-        height: 100px;
-        box-sizing: border-box;
-    }
+    <div class="form-group">
+        {{ form_label(form.telefone, 'Telefone') }}
+        {{ form_widget(form.telefone, {'attr': {'class': 'form-control'}}) }}
+    </div>
 
-    .evaluate-dialog button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-    }
+    <div class="form-group">
+        {{ form_label(form.tipo, 'Tipo') }}
+        {{ form_widget(form.tipo, {'attr': {'class': 'form-control tipo-field'}}) }}
+    </div>
 
-    .evaluate-dialog button:hover {
-        background-color: #0056b3;
-    }
+    {# Adicione um campo oculto para armazenar os papéis #}
+    <input type="hidden" id="roles-field" name="usuarios[roles]" value="{{ form.vars.value.roles | default([]) | join(',') }}" />
 
-/*         body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-*/
-     h1 {
-        text-align: center;
-        color: #333;
-    }
+    <div class="form-group">
+        {{ form_label(form.roles, 'Roles') }}
+        {{ form_widget(form.roles, {'attr': {'class': 'form-control tipo-field', 'data-roles-field': 'roles-field'}}) }}
+    </div>
 
-    form {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        width: 100%;
-    }
+    <button class="btn btn-primary" id="update-roles-button">{{ button_label|default('Save') }}</button>
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
-
-    table, th, td {
-        border: 1px solid #ddd;
-        text-align: left;
-    }
-
-    th, td {
-        padding: 10px;
-    }
-
-    th {
-        background-color: #007bff;
-        color: #fff;
-    }
-    
-    input,
-    select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        box-sizing: border-box;
-    }
-
-    button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #0056b3;
-    } 
-
-
-</style>
-
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Mapeie os valores de tipo para os papéis correspondentes
+        var rolesMapping = {
+            1: ['ROLE_ADMIN'],
+            2: ['ROLE_NUTRICIONISTA'],
+            3: ['ROLE_USER']
+            // Adicione mais mapeamentos conforme necessário
+        };
+
+        // Quando o botão é clicado
+        $('#update-roles-button').click(function () {
+            // Obtenha o valor selecionado no campo de tipo
+            var selectedTipo = $('.tipo-field').val();
+            
+            // Se houver um mapeamento para esse tipo
+            if (rolesMapping[selectedTipo]) {
+                // Atualize os papéis no campo oculto
+                $('#roles-field').val(rolesMapping[selectedTipo].join(','));
+            }
+        });
+    });
+</script>

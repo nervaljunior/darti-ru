@@ -4,6 +4,8 @@
 
 {% block body %}
 
+
+
             <div class="jumbotron mt-4">
                 <div class="row">
                     <div class="details">
@@ -36,31 +38,7 @@
             
             <div class="recentCustomers">
 
-                    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Data</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for cardapio in cardapios %}
-            <tr>
-                <td>{{ cardapio.id }}</td>
-                <td>{{ cardapio.data ? cardapio.data|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_cardapio_show', {'id': cardapio.id}) }}">show</a>
-                    <a href="{{ path('app_cardapio_edit', {'id': cardapio.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+
 
                 <div class="recentOrders">
                     <div id="alimento" class="cardHeader">

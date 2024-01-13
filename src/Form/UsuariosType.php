@@ -4,10 +4,9 @@ namespace App\Form;
 
 use App\Entity\Usuarios;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class UsuariosType extends AbstractType
 {
@@ -15,22 +14,34 @@ class UsuariosType extends AbstractType
     {
         $builder
             ->add('email')
+            ->add('password')
+            ->add('nome')
+            ->add('telefone')
+            ->add('tipo', ChoiceType::class, [
+                'choices' => [
+                    'Admin' => 1,
+                    'Nutricionista' => 2,
+                    'User' => 3,
+                ],
+                'attr' => [
+                    'class' => 'tipo-field', // Adicione uma classe aqui
+                ],
+            ])
             ->add('roles', ChoiceType::class, [
                 'choices' => [
                     'User' => 'ROLE_USER',
                     'Admin' => 'ROLE_ADMIN',
-                    'nutricionista'=> 'ROLE_NUTRICIONISTA',
+                    'Nutricionista' => 'ROLE_NUTRICIONISTA',
                 ],
                 'multiple' => true,
                 'expanded' => true,
+                'attr' => [
+                    'class' => 'roles-field', // Adicione uma classe aqui
+                ],
             ])
-            ->add('password')
-            ->add('nome')
-            ->add('telefone')
-            ->add('tipo')
-            /* ->add('isVerified') */
         ;
     }
+
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
