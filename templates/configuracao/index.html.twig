@@ -26,27 +26,28 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
 
     <div class="action-link">
-        <a href="{{ path('app_alimento_new') }}">
+        <a href="{{ '/alimento' }}">
             Adicionar Alimento
         </a>
     </div>
 
     <div class="action-link">
-        <a href="{{ path('app_unidade_new') }}">
+        <a href="{{ '/unidade' }}">
             Adicionar Unidade
         </a>
     </div>
 
     <div class="action-link">
-        <a href="{{ path('app_cardapio_new') }}">
+        <a href="{{ '/cardapio' }}">
             Criar Cardápio
         </a>
     </div>
-
+<div>
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'D:/2_PESQUISAS/DARTi/darti-ru/src/Controller/ConfiguracaoController.php'|file_link(0) }}">src/Controller/ConfiguracaoController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'D:/2_PESQUISAS/DARTi/darti-ru/templates/configuracao/index.html.twig'|file_link(0) }}">templates/configuracao/index.html.twig</a></code></li>
     </ul>
+</div>
 </div>
 {% endblock %}
