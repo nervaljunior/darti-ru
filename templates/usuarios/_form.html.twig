@@ -1,63 +1,37 @@
-{{ form_start(form) }}
-
+{{ form_start(form) }} 
+    {{ form_start(form) }}
+    
     <div class="form-group">
         {{ form_label(form.email, 'Email') }}
         {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
     </div>
-
+    
     <div class="form-group">
         {{ form_label(form.password, 'Password') }}
         {{ form_widget(form.password, {'attr': {'class': 'form-control', 'autocomplete': 'new-password'}, 'type': 'password'}) }}
     </div>
-
+    
     <div class="form-group">
         {{ form_label(form.nome, 'Nome') }}
         {{ form_widget(form.nome, {'attr': {'class': 'form-control'}}) }}
     </div>
-
+    
     <div class="form-group">
         {{ form_label(form.telefone, 'Telefone') }}
         {{ form_widget(form.telefone, {'attr': {'class': 'form-control'}}) }}
     </div>
-
+    
     <div class="form-group">
         {{ form_label(form.tipo, 'Tipo') }}
         {{ form_widget(form.tipo, {'attr': {'class': 'form-control tipo-field'}}) }}
     </div>
-
-    {# Adicione um campo oculto para armazenar os papéis #}
-    <input type="hidden" id="roles-field" name="usuarios[roles]" value="{{ form.vars.value.roles | default([]) | join(',') }}" />
-
+    
     <div class="form-group">
         {{ form_label(form.roles, 'Roles') }}
+        <br>
+        <br>
         {{ form_widget(form.roles, {'attr': {'class': 'form-control tipo-field', 'data-roles-field': 'roles-field'}}) }}
     </div>
 
-    <button class="btn btn-primary" id="update-roles-button">{{ button_label|default('Save') }}</button>
-
+    <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        // Mapeie os valores de tipo para os papéis correspondentes
-        var rolesMapping = {
-            1: ['ROLE_ADMIN'],
-            2: ['ROLE_NUTRICIONISTA'],
-            3: ['ROLE_USER']
-            // Adicione mais mapeamentos conforme necessário
-        };
-
-        // Quando o botão é clicado
-        $('#update-roles-button').click(function () {
-            // Obtenha o valor selecionado no campo de tipo
-            var selectedTipo = $('.tipo-field').val();
-            
-            // Se houver um mapeamento para esse tipo
-            if (rolesMapping[selectedTipo]) {
-                // Atualize os papéis no campo oculto
-                $('#roles-field').val(rolesMapping[selectedTipo].join(','));
-            }
-        });
-    });
-</script>
