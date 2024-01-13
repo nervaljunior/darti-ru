@@ -28,7 +28,7 @@ class UsuariosType extends AbstractType
             ->add('nome')
             ->add('telefone')
             ->add('tipo')
-            ->add('isVerified')
+            /* ->add('isVerified') */
         ;
     }
     public function configureOptions(OptionsResolver $resolver): void

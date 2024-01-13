@@ -3,10 +3,128 @@
 {% block title %}Usuarios index{% endblock %}
 
 {% block body %}
-    <h1>Usuarios index</h1>
 
-    <table class="table">
-        <thead>
+<style>
+
+    .edit-btn,
+    .delete-btn,
+    .evaluate-btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .edit-btn:hover,
+    .delete-btn:hover,
+    .evaluate-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .evaluate-dialog {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #fff;
+        z-index: 999;
+    }
+
+    .evaluate-dialog textarea {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+    }
+
+    .evaluate-dialog button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .evaluate-dialog button:hover {
+        background-color: #0056b3;
+    }
+
+/*         body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+*/
+     h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+    }
+    
+    input,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    } 
+
+
+</style>
+<h1>Usuarios index</h1>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
             <tr>
                 {#<th>Id</th>#}
                 <th>Nome</th>
@@ -31,18 +149,17 @@
                 {#<td>{{ usuario.tipo }}</td>#}
                 {#<td>{{ usuario.isVerified ? 'Yes' : 'No' }}</td>#}
                 <td>
-                    <a href="{{ path('app_usuarios_show', {'id': usuario.id}) }}">show</a>
-                    <a href="{{ path('app_usuarios_edit', {'id': usuario.id}) }}">edit</a>
+                    <a href="{{ path('app_usuarios_show', {'id': usuario.id}) }}" class="btn btn-info">Show</a>
+                    <a href="{{ path('app_usuarios_edit', {'id': usuario.id}) }}" class="btn btn-warning">Edit</a>
                 </td>
-                
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="9">No records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ '/register' }}">Create new</a>
+    <a href="{{ '/register' }}" class="btn btn-success">Create new</a>
 {% endblock %}
