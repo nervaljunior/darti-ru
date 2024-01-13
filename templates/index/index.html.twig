@@ -33,72 +33,99 @@
                     </div>
                 </div>
             </div>
+            
             <div class="recentCustomers">
 
+                    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Data</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cardapio in cardapios %}
+            <tr>
+                <td>{{ cardapio.id }}</td>
+                <td>{{ cardapio.data ? cardapio.data|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_cardapio_show', {'id': cardapio.id}) }}">show</a>
+                    <a href="{{ path('app_cardapio_edit', {'id': cardapio.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
                 <div class="recentOrders">
-                    <div class="cardHeader">
+                    <div id="alimento" class="cardHeader">
                         <h2>Cardápio do Dia</h2>
                         <button href="{{ path('app_alimento_index') }}" id="todos_alimentos" name="tabela_alimentos" class="btn">Ver Todos</button>
                     </div>
-                    {# Exibe os alimentos existentes #}
-            {% if resultSelectAll %}
-            <br>
-            <table>
-            <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Categoria</th>
-            <th>Calorias</th>
-            <th>Ações</th>
-            </tr>
-            
-            {% for row in resultSelectAll %}
-            <tr>
-                <td>{{ row.id }}</td>
-                <td>{{ row.nome }}</td>
-                <td>{{ row.categoria }}</td>
-                <td>{{ row.calorias }}</td>
-                <td>
-                    <button class="evaluate-btn" onclick="openEvaluateDialog({{ row.id }})">Avaliar</button>
-                </td>
-            </tr>
-            {% endfor %}
-            
-            </table>
-            {% endif %}
-            
+                       
+                {% if resultSelectAll %}
+                <br>
+                <table>
+                <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Calorias</th>
+                <th>Ações</th>
+                </tr>
+                
+                {% for row in resultSelectAll %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.nome }}</td>
+                    <td>{{ row.categoria }}</td>
+                    <td>{{ row.calorias }}</td>
+                    <td>
+                        <button class="evaluate-btn" onclick="openEvaluateDialog({{ row.id }})">Avaliar</button>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+                </table>
+                {% endif %}
+                
+                    </div>
+                
                 </div>
+    
+        <script>
+            function avaliacao() {
+                // Obter o valor selecionado
+                var unidadeId = document.getElementById("unidade_id").value;
+    
+                // Redirecionar para a rota dinâmica
+                window.location.href = "{{ path('app_avaliacao_index', {'unidade_id': '__unidadeId__'}) }}".replace('__unidadeId__', unidadeId);
+            }
+    
+            //menu toggle
+            let toggle = document.querySelector('.toggle');
+            let navegation = document.querySelector('.navegation');
+            let main = document.querySelector('.main');
+    
+            toggle.onclick = function(){
+                navegation.classList.toggle('active')
+                main.classList.toggle('active')
+            }
             
-            </div>
-
-    <script>
-        function avaliacao() {
-            // Obter o valor selecionado
-            var unidadeId = document.getElementById("unidade_id").value;
-
-            // Redirecionar para a rota dinâmica
-            window.location.href = "{{ path('app_avaliacao_index', {'unidade_id': '__unidadeId__'}) }}".replace('__unidadeId__', unidadeId);
-        }
-
-        //menu toggle
-        let toggle = document.querySelector('.toggle');
-        let navegation = document.querySelector('.navegation');
-        let main = document.querySelector('.main');
-
-        toggle.onclick = function(){
-            navegation.classList.toggle('active')
-            main.classList.toggle('active')
-        }
-        
-        let list = document.querySelectorAll('.navegation li');
-        function activeLink(){
-            list.forEach((item) =>
-            item.classList.remove('hovered'));
-            this.classList.add('hovered');
-        }
-        list.forEach((item) => 
-        item.addEventListener('mouseover', activeLink));
-    </script>
+            let list = document.querySelectorAll('.navegation li');
+            function activeLink(){
+                list.forEach((item) =>
+                item.classList.remove('hovered'));
+                this.classList.add('hovered');
+            }
+            list.forEach((item) => 
+            item.addEventListener('mouseover', activeLink));
+        </script>
 {% endblock %}
 
 

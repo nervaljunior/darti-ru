@@ -17,7 +17,7 @@ class CardapioType extends AbstractType
             ->add('data')
             ->add('id_alimento', EntityType::class, [
                 'class' => Alimento::class,
-'choice_label' => 'id',
+'choice_label' => 'nome',
             ])
         ;
     }

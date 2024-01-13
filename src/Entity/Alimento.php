@@ -21,10 +21,10 @@ class Alimento
     #[ORM\Column(length: 255)]
     private ?string $categoria = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $descricao = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $criterios = null;
 
     #[ORM\OneToMany(mappedBy: 'id_alimento', targetEntity: Cardapio::class)]
