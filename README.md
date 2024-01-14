@@ -62,24 +62,25 @@ Este projeto está aberto a contribuições da comunidade. Sinta-se à vontade p
 
 
 
-## Anexos
+## Anexo 1
 
-- Anexo 1
+
 
 # AQUISIÇÃO DOS GÊNEROS ALIMENTÍCIOS E OUTROS MATERIAIS DE CONSUMO
 
 A aquisição de gêneros deverá respeitar o PADRÃO DE IDENTIDADE E QUALIDADE (PIQ) estabelecido pela CONTRATANTE, embasado pelas Instruções Normativas do Ministério da Agricultura, Pecuária e Abastecimento e pelas Normas Legislativas do Ministério da Saúde, conforme ANEXO 1. A CONTRATANTE poderá solicitar à CONTRATADA a substituição do gênero, caso este não esteja dentro dos padrões estabelecidos.
 
 
-- Anexo 2
+## Anexo 2
 # PRÉ- PREPARO E PREPARO DOS ALIMENTOS
 
 Os alimentos levados à pré-preparo e preparo, deverão obedecer aos critérios de tempo e temperatura, conforme legislação vigente. Após a finalização do preparo, as preparações deverão ser mantidas em condições ideais de tempo e temperatura até o seu envase e distribuição de acordo com o ANEXO 2 e ANEXO 2-A.
 
-- Anexo 3
+## Anexo 3
 
 A avaliação das preparações prontas, do Restaurante Universitário (Almoço e Jantar) e Colégio Universitário (Lanche matutino e vespertino), será realizada mediante formulários disponibilizados no ANEXO 3 E ANEXO 3-A.
-- Anexo 4
+
+## Anexo 4
 
 # CONTROLE BACTERIOLÓGICO
 
