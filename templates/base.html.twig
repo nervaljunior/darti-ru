@@ -5,6 +5,8 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link rel="stylesheet" href="/assets/css/app.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
         {% block stylesheets %}
         {% endblock %}
 
@@ -32,20 +34,20 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                        <span class="tittle">Menssagem</span>
+                    <a href="{{'/alimento'}}">
+                        <span class="icon"><i class="fas fa-utensils"></i></span>
+                        <span class="tittle">Alimentos</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{path('app_ajuda')}}">
                         <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
                         <span class="tittle">Ajuda</span>
                     </a>
                 </li>
                 <li>
                 <li>
-                    <a href="{{'/configuracao'}}">
+                    <a href="{{path('app_configuracao')}}">
                         <span class="icon"><ion-icon name="construct-outline"></ion-icon></span>
                         <span class="tittle">Configurações</span>
                     </a>

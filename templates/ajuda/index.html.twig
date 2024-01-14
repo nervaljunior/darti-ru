@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AjudaController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            line-height: 1.6;
+            color: var(--black1);
+        }
+
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+        }
+
+        h1, h2 {
+            color: var(--blue);
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        section {
+            border-bottom: 1px solid var(--grey);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'D:/2_PESQUISAS/DARTi/darti-ru/src/Controller/AjudaController.php'|file_link(0) }}">src/Controller/AjudaController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'D:/2_PESQUISAS/DARTi/darti-ru/templates/ajuda/index.html.twig'|file_link(0) }}">templates/ajuda/index.html.twig</a></code></li>
+    </ul>
+    
+    
+    <section id="anexo1">
+    <h2>Anexo 1 - Aquisição dos Gêneros Alimentícios e Outros Materiais de Consumo</h2>
+    <p>
+        A aquisição de gêneros deverá respeitar o PADRÃO DE IDENTIDADE E QUALIDADE (PIQ) estabelecido pela CONTRATANTE, embasado pelas Instruções Normativas do Ministério da Agricultura, Pecuária e Abastecimento e pelas Normas Legislativas do Ministério da Saúde, conforme ANEXO 1. A CONTRATANTE poderá solicitar à CONTRATADA a substituição do gênero, caso este não esteja dentro dos padrões estabelecidos.
+    </p>
+</section>
+
+<section id="anexo2">
+    <h2>Anexo 2 - Pré-Preparo e Preparo dos Alimentos</h2>
+    <p>
+        Os alimentos levados à pré-preparo e preparo deverão obedecer aos critérios de tempo e temperatura, conforme legislação vigente. Após a finalização do preparo, as preparações deverão ser mantidas em condições ideais de tempo e temperatura até o seu envase e distribuição de acordo com o ANEXO 2 e ANEXO 2-A.
+    </p>
+</section>
+
+<section id="anexo3">
+    <h2>Anexo 3 - Avaliação das Preparações Prontas</h2>
+    <p>
+        A avaliação das preparações prontas, do Restaurante Universitário (Almoço e Jantar) e Colégio Universitário (Lanche matutino e vespertino), será realizada mediante formulários disponibilizados no ANEXO 3 E ANEXO 3-A.
+    </p>
+</section>
+
+<section id="anexo4">
+    <h2>Anexo 4 - Controle Bacteriológico</h2>
+    <p>
+        Para controle de qualidade da alimentação a ser servida, a CONTRATADA deverá coletar diariamente amostras de no mínimo 100g de todas as preparações do cardápio diário servido, no Restaurante Universitário central, no Centro Pedagógico Paulo Freire, e no Colégio Universitário, de acordo com a INSTRUÇÃO NORMATIVA DIVISA/SVS/DF Nº 16, DE 23 DE MAIO DE 2017 (ANEXO 4).
+    </p>
+</section>
+</div>
+{% endblock %}

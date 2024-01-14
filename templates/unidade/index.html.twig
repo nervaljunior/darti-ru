@@ -165,6 +165,10 @@
                         <br>
                     </div>
                     <a class="edit-btn" href="{{ path('app_unidade_edit', {'id': unidade.id}) }}"><i class="fas fa-edit"></i></a>
+                    <div>
+                        <br>
+                    </div>
+                    {{ include('unidade/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}

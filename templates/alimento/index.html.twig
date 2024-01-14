@@ -3,8 +3,6 @@
 {% block title %}Alimento index{% endblock %}
 
 {% block body %}
-<!-- Adicione isto ao cabeçalho do seu HTML -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
 <style>
@@ -169,6 +167,10 @@
                         <br>
                     </div>
                     <a class="edit-btn" href="{{ path('app_alimento_edit', {'id': alimento.id}) }}"><i class="fas fa-edit"></i></a>
+                    <div>
+                        <br>
+                    </div>
+                    {{ include('alimento/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
