@@ -4,10 +4,27 @@
 
 {% block body %}
 
+<!-- Adicione isto ao cabeçalho do seu HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
 <style>
 
-    .edit-btn,
-    .delete-btn,
+    .delete-btn {
+        background-color: #dc3545; /* Vermelho do Bootstrap */
+        color: #fff;
+        padding: 5px 12px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .delete-btn:hover {
+        background-color: #c82333; /* Tom mais escuro de vermelho no hover */
+    }
+
     .evaluate-btn {
         background-color: #007bff;
         color: #fff;
@@ -18,11 +35,24 @@
         margin-right: 5px;
     }
 
-    .edit-btn:hover,
-    .delete-btn:hover,
     .evaluate-btn:hover {
         background-color: #0056b3;
     }
+
+    .edit-btn {
+        background-color: #ffc107; /* Amarelo do Bootstrap */
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .edit-btn:hover {
+        background-color: #e0a800; /* Tom mais escuro de amarelo no hover */
+    }
+
 
     .evaluate-dialog {
         display: none;
@@ -69,14 +99,6 @@
         color: #333;
     }
 
-    form {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        width: 100%;
-    }
 
     table {
         width: 100%;
@@ -121,8 +143,9 @@
 
 
 </style>
-    <h1>Unidade index</h1>
 
+    <h1>Unidade index</h1>
+    <a href="{{ path('app_unidade_new') }}" class="btn btn-success"><i class="fas fa-plus"></i>Create new</a>
     <table class="table">
         <thead>
             <tr>
@@ -137,8 +160,11 @@
                 <td>{{ unidade.id }}</td>
                 <td>{{ unidade.nome }}</td>
                 <td>
-                    <a href="{{ path('app_unidade_show', {'id': unidade.id}) }}">show</a>
-                    <a href="{{ path('app_unidade_edit', {'id': unidade.id}) }}">edit</a>
+                    <a class="btn btn-info" href="{{ path('app_unidade_show', {'id': unidade.id}) }}"><i class="fas fa-eye"></i></a>
+                    <div>
+                        <br>
+                    </div>
+                    <a class="edit-btn" href="{{ path('app_unidade_edit', {'id': unidade.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -149,5 +175,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_unidade_new') }}">Create new</a>
+
 {% endblock %}

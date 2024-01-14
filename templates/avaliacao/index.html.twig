@@ -3,12 +3,28 @@
 {% block title %}Avaliacao index{% endblock %}
 
 {% block body %}
-{#fazer crud aqui para avalização#}
-{#Antes disso adicionar compos a tabela de avaliação com base na foraing key de alimentos e unidade e cardapio#}
-
 
 <style>
+    .muito-bom {
+        background-color: #006400; /* Verde escuro */
+        color: white;
+    }
 
+    .bom {
+        background-color: #8BC34A; /* Verde fraco */
+        color: white;
+    }
+
+    .regular {
+        background-color: #FFC107; /* Amarelo */
+        color: #333;
+    }
+
+    .insatisfatorio {
+        background-color: #F44336; /* Vermelho */
+        color: white;
+    }
+    
     .caixa {
             width: 200px;
             padding: 20px;
@@ -77,7 +93,7 @@
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
-    </style>
+</style>
 
  
 <div class="container">
@@ -124,6 +140,25 @@
     </table>
 
    {# <a href="{{ path('app_avaliacao_new') }}">Create new</a>#}
+
+   <h1>Avaliação de Serviços</h1>
+
+   <form action="{{ path('app_avaliacao_index') }}" method="post">
+       {# ... seleção de unidade e campos de pontuação ... #}
+
+       <input type="submit" value="Calcular Pontuação">
+   </form>
+
+   {% if pontuacaoTotal > 0 %}
+       <p>Pontuação Total para {{ unidade }}: {{ pontuacaoTotal }}</p>
+       <p>Classificação: {{ classificacao }}</p>
+   {% endif %}
+
+   {% if classificacao %}
+   <div id="pontuacao" class="{{ classificacao|lower }}" style="padding: 10px; border-radius: 5px; text-align: center;">
+       {{ classificacao }}
+   </div>
+{% endif %}
 
 
         <form action="" method="post">
