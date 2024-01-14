@@ -148,6 +148,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                {#<th>Alimento</th>#}
                 <th>Data</th>
                 <th>actions</th>
             </tr>
@@ -156,6 +157,7 @@
         {% for cardapio in cardapios %}
             <tr>
                 <td>{{ cardapio.id }}</td>
+                {#<td>{{ cardapio.id_alimento is not null ? cardapio.id_alimento.nome : 'N/A' }}</td>#}
                 <td>{{ cardapio.data ? cardapio.data|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a class="btn btn-info" href="{{ path('app_cardapio_show', {'id': cardapio.id}) }}"><i class="fas fa-eye"></i></a>

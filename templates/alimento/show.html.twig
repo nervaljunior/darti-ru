@@ -3,6 +3,83 @@
 {% block title %}Alimento{% endblock %}
 
 {% block body %}
+<!-- Adicione isto ao cabeçalho do seu HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<style>
+    .button-group {
+        display: flex;
+        gap: 10px;  /* Espaçamento entre os botões */
+        
+    }
+    
+    .delete-btn {
+        background-color: #dc3545; /* Vermelho do Bootstrap */
+        color: #fff;
+        padding: 5px 12px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .delete-btn:hover {
+        background-color: #c82333; /* Tom mais escuro de vermelho no hover */
+    }
+
+    .evaluate-btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .evaluate-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .edit-btn {
+        background-color: #ffc107; /* Amarelo do Bootstrap */
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .edit-btn:hover {
+        background-color: #e0a800; /* Tom mais escuro de amarelo no hover */
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    table {
+        width: 60%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+</style>
+
     <h1>Alimento</h1>
 
     <table class="table">
@@ -30,9 +107,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_alimento_index') }}">back to list</a>
+    <a class="btn btn-info back-btn" href="{{ path('app_alimento_index') }}">back to list<i class="fas fa-arrow-left"></i></a>
 
-    <a href="{{ path('app_alimento_edit', {'id': alimento.id}) }}">edit</a>
+    <a class="edit-btn" href="{{ path('app_alimento_edit', {'id': alimento.id}) }}"><i class="fas fa-edit"></i></a>
 
     {{ include('alimento/_delete_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}
