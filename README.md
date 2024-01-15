@@ -31,6 +31,21 @@ Este projeto visa desenvolver um sistema baseado no framework Symfony para otimi
 - Linguagem de Programação PHP
 - HTML, CSS, JavaScript
 
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/1212bfb5-f61d-4a98-9532-abf3ae43b4db)
+
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/3b1b6b8a-0d7d-410b-99b7-e1f42bd0f1fd)
+
+
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/50051a75-e72b-4c1c-997d-c3ad6720a04a)
+
+
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/90c53aa0-a920-415f-98ee-25c8a1a31be2)
+
+
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/d5906a9a-92f1-4a54-ad08-c0c3bfaf9b66)
+
+
+
 ### Instalação
 
 1. Clone este repositório.
@@ -241,6 +256,8 @@ dessa forma irá criar uma media de classificação
 | Regular             | 7,64 a 6,75 pontos       | <span style="color:yellow">Amarelo</span> |
 | Insatisfatório      | Abaixo de 6,75 pontos    | <span style="color:red">Vermelho</span> |
 
+
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/67eee95f-d66b-4400-bca0-3b21f356ddbb)
 
 ---
 
