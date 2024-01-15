@@ -4,7 +4,40 @@
 
 {% block body %}
 
-<style>
+
+    <style>
+        .action-link {
+            margin: 10px;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        
+        .action-link:hover {
+            background-color: #0056b3;
+        }
+        
+        .action-link a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        
+        .action-link i {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .action-link i:last-child {
+            margin-left: auto;
+        }
+        
+    
     .muito-bom {
         background-color: #006400; /* Verde escuro */
         color: white;
@@ -96,7 +129,19 @@
 </style>
 
  
+<div class="example-wrapper">
+    {% for i in 1..5 %}
+        <div class="action-link" onclick="window.location='{{ path('avaliacao_anexo' ~ i) }}';">
+            <i class="fas fa-file-alt"></i> Anexo {{ i }}
+            <i class="fas fa-arrow-right"></i>
+        </div>
+    {% endfor %}
+</div>
+
+
 <div class="container">
+    
+    
     <div class="example-wrapper">
       
     <h1>Avaliacao index</h1>

@@ -1,0 +1,74 @@
+{# templates/avaliacao/success.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Avaliação Concluída com Sucesso{% endblock %}
+
+{% block body %}
+
+<style>
+
+   
+.modal {
+    text-align: center;
+    animation: fadeOut 5s ease-in-out forwards;
+    background-color: #28a745; /* Cor de fundo verde ou a desejada */
+    
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 999;
+    color: white; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+</style>
+
+    <div class="container">
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1>Avaliação Concluída com Sucesso!</h1>
+            <p>Obrigado por completar a avaliação do {{ anexo }}.</p>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function closeModal() {
+            var modal = document.querySelector('.modal');
+            modal.style.display = 'none';
+        }
+
+        function redirectToHome() {
+            window.location.href = '{{ path('app_avaliacao_index') }}';
+        }
+
+        // Exibe o modal assim que a página for carregada
+        window.onload = function () {
+            var modal = document.querySelector('.modal');
+            modal.style.display = 'block';
+
+            // Fecha o modal após 2 segundos (ajuste conforme necessário)
+            setTimeout(function () {
+                closeModal();
+                redirectToHome();
+            }, 2000);
+        };
+    </script>
+{% endblock %}
