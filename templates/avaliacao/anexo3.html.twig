@@ -7,6 +7,8 @@
     textarea {
         width: 100%;
         height: 80px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
     }
 
     form {
@@ -16,22 +18,27 @@
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
-        margin-bottom: 20px;
     }
 
     .cardHeader {
         background-color: #f2f2f2;
+        color: white;
         padding: 10px;
         margin-bottom: 20px;
         border-radius: 4px;
     }
 
-    h2, h3 {
+    h1, h2 ,h3{
         color: #333;
     }
 
+    ol, ul {
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+
     label {
-        display: block;
+        
         margin-bottom: 5px;
         font-weight: bold;
     }
@@ -60,8 +67,7 @@
         background-color: #f2f2f2;
     }
 
-    input[type="checkbox"],
-    input[type="radio"] {
+    input[type="checkbox"] {
         margin-right: 5px;
     }
 
@@ -130,38 +136,6 @@
         <!-- Fim do formulário HTML -->
         <input type="submit" value="Enviar Avaliação">
     </form>
-    <form id="avaliacaoForm" method="post">
-        <h2>Avaliação do Cardápio do Colégio Universitário</h2>
-    <h3>Refeição: Lanche Matutino (    )   Lanche Vespertino (    )</h3>
-    <label for="dataColegio">Data:</label>
-    <input type="text" id="dataColegio" name="dataColegio" placeholder="[Insira a data aqui]" required>
-    
-    <table>
-        <tr>
-            <th>Preparação</th>
-            <th>Avaliação</th>
-        </tr>
-        <!-- Adicione as linhas da tabela conforme necessário -->
-        <tr>
-            <td></td>
-            <td><textarea id="avaliacaoColegio" name="avaliacaoColegio" rows="4" placeholder=""></textarea></td>
-        </tr>
-    </table>
-    
-    <h3>Justificativa/Medida Corretiva</h3>
-    <label for="emAcordoColegio">Em acordo com o cardápio</label>
-    <input type="checkbox" id="emAcordoColegio" name="emAcordoColegio">
-    <br>
-    <label for="aprovacaoColegio">Aprovação</label>
-    <input type="checkbox" id="aprovacaoColegio" name="aprovacaoColegio">
-    <div>
-        <label for="aprovacaoSimColegio">Sim</label>
-        <input type="radio" id="aprovacaoSimColegio" name="aprovacaoOpcaoColegio" value="sim">
-        <label for="aprovacaoNaoColegio">Não</label>
-        <input type="radio" id="aprovacaoNaoColegio" name="aprovacaoOpcaoColegio" value="nao">
-    </div>
-    
-    <!-- Adicione outras etapas e critérios do Colégio conforme necessário -->
-</form>
+
 </div>
 {% endblock %}
