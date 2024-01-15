@@ -24,12 +24,20 @@ Este projeto visa desenvolver um sistema baseado no framework Symfony para otimi
 ![image](https://github.com/nervaljunior/darti-ru/assets/108685222/61b57d4d-549b-4207-8635-831cc2bbfbdb)
 
 
+https://github.com/nervaljunior/darti-ru/assets/108685222/56c72d04-5170-4a66-a33b-a70e1fd8aa91
+
+
 ### Tecnologias Utilizadas
 
 - Symfony Framework
 - Banco de Dados MySQL ou PostgreSQL
 - Linguagem de Programação PHP
 - HTML, CSS, JavaScript
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/e7510de1-16a9-4367-92e3-1309b80837c2)
+
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/b52ebe0e-fffa-467d-975d-c2a9db015c43)
+
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/1da5a148-01f7-45b1-a450-67dbe80ca582)
 
 ![image](https://github.com/nervaljunior/darti-ru/assets/108685222/1212bfb5-f61d-4a98-9532-abf3ae43b4db)
 
