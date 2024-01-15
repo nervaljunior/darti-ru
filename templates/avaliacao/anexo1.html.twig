@@ -5,12 +5,77 @@
 {% block body %}
 <style>
     textarea {
-        width: 400px;
+        width: 100%;
+        height: 80px;
+    }
+
+    form {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .cardHeader {
+        background-color: #f2f2f2;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
     }
 </style>
+
 <h1>{{ anexo }}</h1>
 
-<div class="details">
+<div class="example-wrapper">
     <form id="avaliacaoForm" method="post">
         <div class="cardHeader">
             <h2>Avaliação de Alimento</h2>
@@ -24,10 +89,10 @@
         <input type="number" id="nota" name="nota" required>
         <br>
         <label for="alimentName">Nome do Alimento:</label>
-        <input type="text" id="alimentName" name="alimentName" value="{#{ rowAlimento['nome'] }#}" readonly>
+        <input type="text" id="alimentName" name="alimentName" value="{# rowAlimento['nome'] #}" readonly>
         <br>
         <label for="alimentCategory">Categoria:</label>
-        <input type="text" id="alimentCategory" name="alimentCategory" value="{#{ rowAlimento['categoria'] }#}" readonly>
+        <input type="text" id="alimentCategory" name="alimentCategory" value="{# rowAlimento['categoria'] #}" readonly>
         <br>
         <label for="avaliacao">Avaliação:</label>
         <select id="avaliacao" name="avaliacao" required>
@@ -39,7 +104,7 @@
         <br>
         <label for="observacoes">Observações:</label>
         <textarea id="observacoes" name="observacoes" rows="4"></textarea>
-        <input type="hidden" name="id_alimento" value="{#{ id_alimento }#}">
+        <input type="hidden" name="id_alimento" value="{# id_alimento #}">
         <br>
 
         <!-- Adicionando os campos de avaliação -->

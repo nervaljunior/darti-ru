@@ -1,19 +1,64 @@
-{# templates/avaliacao/anexo1.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Avaliação {{ anexo }}{% endblock %}
 
 {% block body %}
-<h1> {{ anexo }} </h1>
-
 <style>
     textarea {
-        width: 400px;
+        width: 100%;
+        height: 80px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .cardHeader {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+
+    h1, h2 {
+        color: #333;
+    }
+
+    ol, ul {
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
     }
 </style>
-<h2>Rotina de Fiscalização do Restaurante Universitário</h2>
 
-<div class="details">
+<h1>{{ anexo }}</h1>
+
+<div class="example-wrapper">
     <form id="fiscalizacaoForm" method="post">
         <div class="cardHeader">
             <h2>Restaurante Universitário Central - Setor: Recebimento de Gêneros</h2>
@@ -26,7 +71,8 @@
                     <li>
                         <strong>Conferência das Condições Higiênicas da Área de Recebimento:</strong>
                         <ul>
-                            <li>Avaliação:
+                            <li>
+                                Avaliação:
                                 <input type="checkbox" name="condicoesAreaRecebimento" value="adequado"> Adequado
                                 <input type="checkbox" name="condicoesAreaRecebimento" value="inadequado"> Inadequado
                             </li>
@@ -44,7 +90,7 @@
         <!-- Fiscal Responsável -->
         <div>
             <strong>Fiscal Responsável:</strong>
-            <input type="text" name="fiscalResponsavel" placeholder="Insira o nome do fiscal responsável">
+            <input type="text" name="fiscalResponsavel" placeholder="Insira o nome do fiscal responsável" required>
         </div>
 
         <!-- Fim do formulário HTML -->

@@ -1,18 +1,69 @@
-{# templates/avaliacao/anexo1.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Avaliação {{ anexo }}{% endblock %}
 
 {% block body %}
 <style>
-    textarea {
-        width: 400px;
+    .example-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .cardHeader {
+        background-color: #f2f2f2;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+    form {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
     }
 </style>
+
 <h1>{{ anexo }}</h1>
 
-<div class="details">
-    <form id="avaliacaoForm" method="post">
+<div class="example-wrapper">
+    <form id="" method="post">
         <div class="cardHeader">
             <h2>Critérios de Temperatura e Tempo no Restaurante Universitário</h2>
         </div>
@@ -24,17 +75,23 @@
                 <th>Etapas</th>
                 <th>Temperatura</th>
                 <th>Tempo</th>
+                <th>Avaliação</th>
+                <th>Observações</th>
             </tr>
             <!-- Adicione as linhas da tabela conforme necessário -->
             <tr>
                 <td>Temperaturas de Armazenamento de Alimentos Preparados - Refrigerados</td>
                 <td><input type="text" id="temperaturaRefrigerados" name="temperaturaRefrigerados" readonly value="5ºC"></td>
                 <td></td>
+                <td><input type="text" id="avaliacaoRefrigerados" name="avaliacaoRefrigerados" required></td>
+                <td><textarea id="observacoesRefrigerados" name="observacoesRefrigerados" rows="2"></textarea></td>
             </tr>
             <tr>
                 <td>Temperaturas de Armazenamento de Alimentos Preparados - Congelados</td>
                 <td><input type="text" id="temperaturaCongelados" name="temperaturaCongelados" readonly value="-18ºC"></td>
                 <td></td>
+                <td><input type="text" id="avaliacaoCongelados" name="avaliacaoCongelados" required></td>
+                <td><textarea id="observacoesCongelados" name="observacoesCongelados" rows="2"></textarea></td>
             </tr>
             <!-- Adicione as outras etapas conforme necessário -->
         </table>
@@ -45,15 +102,21 @@
             <tr>
                 <th>Temperatura Recomendada (Graus Celsius)</th>
                 <th>Prazo de Validade (Dias)</th>
+                <th>Avaliação</th>
+                <th>Observações</th>
             </tr>
             <!-- Adicione as linhas da tabela conforme necessário -->
             <tr>
                 <td>0 a -5</td>
                 <td>10</td>
+                <td><input type="text" id="avaliacaoCongelados0a5" name="avaliacaoCongelados0a5" required></td>
+                <td><textarea id="observacoesCongelados0a5" name="observacoesCongelados0a5" rows="2"></textarea></td>
             </tr>
             <tr>
                 <td>-6 a -10</td>
                 <td>20</td>
+                <td><input type="text" id="avaliacaoCongelados6a10" name="avaliacaoCongelados6a10" required></td>
+                <td><textarea id="observacoesCongelados6a10" name="observacoesCongelados6a10" rows="2"></textarea></td>
             </tr>
             <!-- Adicione as outras temperaturas conforme necessário -->
         </table>
@@ -64,22 +127,28 @@
                 <th>Produtos Resfriados</th>
                 <th>Temperatura Recomendada (Graus Celsius)</th>
                 <th>Prazo de Validade (Dias)</th>
+                <th>Avaliação</th>
+                <th>Observações</th>
             </tr>
             <!-- Adicione as linhas da tabela conforme necessário -->
             <tr>
                 <td>Pescados e seus produtos</td>
                 <td>Máximo 2(dois graus)</td>
                 <td>3</td>
+                <td><input type="text" id="avaliacaoPescados" name="avaliacaoPescados" required></td>
+                <td><textarea id="observacoesPescados" name="observacoesPescados" rows="2"></textarea></td>
             </tr>
             <tr>
                 <td>Manipulados crus.</td>
                 <td>Máximo 2(dois graus)</td>
                 <td>1</td>
+                <td><input type="text" id="avaliacaoManipulados" name="avaliacaoManipulados" required></td>
+                <td><textarea id="observacoesManipulados" name="observacoesManipulados" rows="2"></textarea></td>
             </tr>
             <!-- Adicione as outras categorias conforme necessário -->
         </table>
 
-        <!-- Adicione outras etapas e critérios específicos conforme necessário -->
+        <!-- Adicione outros critérios e campos conforme necessário -->
 
         <!-- Fim do formulário HTML -->
         <input type="submit" value="Enviar Avaliação">
