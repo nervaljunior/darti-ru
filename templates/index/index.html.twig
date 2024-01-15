@@ -6,7 +6,10 @@
 
 <style>
     textarea {
-        width: 400px;
+        width: 100%;
+        height: 80px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
     }
 </style>
 
@@ -57,7 +60,8 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Categoria</th>
-                <th>Calorias</th>
+                <th>Descricão</th>
+                <th>Critrios</th>
                 <th>Ações</th>
                 </tr>
                 
@@ -66,7 +70,8 @@
                     <td>{{ row.id }}</td>
                     <td>{{ row.nome }}</td>
                     <td>{{ row.categoria }}</td>
-                    <td>{{ row.calorias }}</td>
+                    <td>{{ row.descricao }}</td>
+                    <td>{{ row.critrios }}</td>
                     <td>
                         <button class="evaluate-btn" onclick="openEvaluateDialog({{ row.id }})">Avaliar</button>
                     </td>

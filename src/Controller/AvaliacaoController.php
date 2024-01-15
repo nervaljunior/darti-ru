@@ -19,17 +19,18 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/avaliacao')]
 class AvaliacaoController extends AbstractController
 {
-    #[Route('/', name: 'app_avaliacao_index', methods: ['GET'])]
-    public function index(Request $request,AvaliacaoRepository $avaliacaoRepository): Response
+    #[Route('/', name: 'app_avaliacao_index', methods: ['GET', 'POST'])]
+    public function index(Request $request, AvaliacaoRepository $avaliacaoRepository): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $pontuacaoTotal = 0;
         $classificacao = '';
         $mensagem = '';
 
-        if ($request->isMethod('POST')) {
-            $unidade = $request->request->get('unidade');
+        // Obtenha o valor do parâmetro de consulta 'unidade_id'
+        $unidade = $request->query->get('unidade_id');
 
+        if ($request->isMethod('POST')) {
             $pontuacoes = [
                 'rotinasDoServico' => $request->request->get('rotinasDoServico') ?? 0,
                 'maoDeObra' => $request->request->get('maoDeObra') ?? 0,
@@ -37,7 +38,7 @@ class AvaliacaoController extends AbstractController
                 'planejamentoOrganizacao' => $request->request->get('planejamentoOrganizacao') ?? 0,
                 'coordenacaoAtividadesTecnicas' => $request->request->get('coordenacaoAtividadesTecnicas') ?? 0,
                 'saudeSalarios' => $request->request->get('saudeSalarios') ?? 0,
-            ];
+            ]; 
 
             $pontuacaoTotal = $this->calcularPontuacaoTotal($unidade, $pontuacoes);
 
@@ -50,6 +51,8 @@ class AvaliacaoController extends AbstractController
             } else {
                 $classificacao = "Insatisfatório";
             }
+
+            $mensagem = "Classificação: " . $classificacao;
         }
 
         $atividades = [
@@ -60,6 +63,7 @@ class AvaliacaoController extends AbstractController
             'coordenacaoAtividadesTecnicas' => 'Coordenação Atividades Técnicas',
             'saudeSalarios' => 'Saúde, Salários',
         ];
+
         return $this->render('avaliacao/index.html.twig', [
             'avaliacaos' => $avaliacaoRepository->findAll(),
             'unidade' => $unidade ?? null,
@@ -70,6 +74,37 @@ class AvaliacaoController extends AbstractController
             'mensagem' => $mensagem,
         ]);
     }
+
+    
+    private function calcularPontuacaoTotal($unidade, $pontuacoes)
+    {
+        $ponderacoes = [
+            'grupo1' => [
+                'rotinasDoServico' => 0.6,
+                'maoDeObra' => 0.4,
+            ],
+            'grupo2' => [
+                'controleRefeicaoTransportada' => 0.4,
+                'planejamentoOrganizacao' => 0.6,
+            ],
+            'grupo3' => [
+                'coordenacaoAtividadesTecnicas' => 0.6,
+                'saudeSalarios' => 0.4,
+            ],
+        ];
+
+        $pontuacaoTotal = 0;
+
+        foreach ($ponderacoes as $grupo => $itens) {
+            foreach ($itens as $item => $percentual) {
+                $pontuacaoTotal += $pontuacoes[$item] * $percentual;
+            }
+        }
+
+        return $pontuacaoTotal;
+    }
+
+
 
     #[Route('/anexo1', name: 'avaliacao_anexo1')]
     public function anexo1(Request $request): Response
@@ -178,34 +213,7 @@ class AvaliacaoController extends AbstractController
         return $this->render('avaliacao/success.html.twig', ['anexo' => $anexo]);
     }
 
-    private function calcularPontuacaoTotal($unidade, $pontuacoes)
-    {
-        $ponderacoes = [
-            'grupo1' => [
-                'rotinasDoServico' => 0.6,
-                'maoDeObra' => 0.4,
-            ],
-            'grupo2' => [
-                'controleRefeicaoTransportada' => 0.4,
-                'planejamentoOrganizacao' => 0.6,
-            ],
-            'grupo3' => [
-                'coordenacaoAtividadesTecnicas' => 0.6,
-                'saudeSalarios' => 0.4,
-            ],
-        ];
-
-        $pontuacaoTotal = 0;
-
-        foreach ($ponderacoes as $grupo => $itens) {
-            foreach ($itens as $item => $percentual) {
-                $pontuacaoTotal += $pontuacoes[$item] * $percentual;
-            }
-        }
-
-        return $pontuacaoTotal;
-    }
-
+    
 
     /* parte do CRUD do codigo antigo, revisar e refazer */
 /* 
