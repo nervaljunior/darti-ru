@@ -43,12 +43,11 @@ https://github.com/nervaljunior/darti-ru/assets/108685222/56c72d04-5170-4a66-a33
 
 ![image](https://github.com/nervaljunior/darti-ru/assets/108685222/3b1b6b8a-0d7d-410b-99b7-e1f42bd0f1fd)
 
+![image](https://github.com/nervaljunior/darti-ru/assets/108685222/dc371529-2231-4fd7-a65b-7668c7113d4a)
 
 ![image](https://github.com/nervaljunior/darti-ru/assets/108685222/50051a75-e72b-4c1c-997d-c3ad6720a04a)
 
-
 ![image](https://github.com/nervaljunior/darti-ru/assets/108685222/90c53aa0-a920-415f-98ee-25c8a1a31be2)
-
 
 ![image](https://github.com/nervaljunior/darti-ru/assets/108685222/d5906a9a-92f1-4a54-ad08-c0c3bfaf9b66)
 
