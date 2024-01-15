@@ -246,8 +246,6 @@ dessa forma irá criar uma media de classificação
 
 # ANEXO 1 - PADRÃO DE IDENTIDADE E QUALIDADE (PIQ) DOS GÊNEROS UTILIZADOS NO RESTAURANTE UNIVERSITÁRIO DA UNIVERSIDADE FEDERAL DO MARANHÃO: HORTIFRUTIGRANJEIROS, CARNES, ESTOCÁVEIS, MATERIAL DE LIMPEZA E DESCARTÁVEIS.
 
-## HORTIFRUTIGRANJEIROS
-
 ### DESCRIÇÃO DO PRODUTO
 
 - **Abacaxi**: maduro, íntegro, de 1ª qualidade, uniforme (polpa firme, doce, sem danos físicos e mecânicos) sem sujidades (ausência de terras ou corpos estranhos), sem parasitas (insetos, larvas e moluscos).
