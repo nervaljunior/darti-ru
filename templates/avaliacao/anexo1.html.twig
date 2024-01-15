@@ -1,17 +1,87 @@
-{# templates/avaliacao/anexo1.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Avaliação {{ anexo }}{% endblock %}
 
 {% block body %}
-<h1> {{ anexo }} </h1>
+<style>
+    textarea {
+        width: 400px;
+    }
+</style>
+<h1>{{ anexo }}</h1>
 
-{{ form_start(form) }}
-{{ form_row(form.DataAvaliacao) }}
-{{ form_row(form.nota) }}
+<div class="details">
+    <form id="avaliacaoForm" method="post">
+        <div class="cardHeader">
+            <h2>Avaliação de Alimento</h2>
+        </div>
 
-<button type="submit" class="btn btn-primary">Enviar</button>
-{{ form_end(form) }}
+        <!-- Campos do formulário de avaliação de alimento -->
+        <label for="DataAvaliacao">Data de Avaliação:</label>
+        <input type="date" id="DataAvaliacao" name="DataAvaliacao" required>
+        <br>
+        <label for="nota">Nota:</label>
+        <input type="number" id="nota" name="nota" required>
+        <br>
+        <label for="alimentName">Nome do Alimento:</label>
+        <input type="text" id="alimentName" name="alimentName" value="{#{ rowAlimento['nome'] }#}" readonly>
+        <br>
+        <label for="alimentCategory">Categoria:</label>
+        <input type="text" id="alimentCategory" name="alimentCategory" value="{#{ rowAlimento['categoria'] }#}" readonly>
+        <br>
+        <label for="avaliacao">Avaliação:</label>
+        <select id="avaliacao" name="avaliacao" required>
+            <option value="excelente">Excelente</option>
+            <option value="bom">Bom</option>
+            <option value="regular">Regular</option>
+            <option value="ruim">Ruim</option>
+        </select>
+        <br>
+        <label for="observacoes">Observações:</label>
+        <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+        <input type="hidden" name="id_alimento" value="{#{ id_alimento }#}">
+        <br>
+
+        <!-- Adicionando os campos de avaliação -->
+        <h2>Critérios de Recebimento</h2>
+        <table>
+            <tr>
+                <th>Critério</th>
+                <th>Avaliação</th>
+            </tr>
+            <tr>
+                <td>Grau de maturação</td>
+                <td>
+                    <select id="grauMaturacao" name="grauMaturacao" required>
+                        <option value="...">...</option>
+                        <!-- Adicione as opções conforme necessário -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Consistência da polpa</td>
+                <td>
+                    <select id="consistenciaPolpa" name="consistenciaPolpa" required>
+                        <option value="...">...</option>
+                        <!-- Adicione as opções conforme necessário -->
+                    </select>
+                </td>
+            </tr>
+            <!-- Adicione os outros critérios conforme necessário -->
+        </table>
+
+        <!-- Adicionando campos para justificativa/medida corretiva e aprovação -->
+        <label for="justificativa">Justificativa/Medida Corretiva:</label>
+        <textarea id="justificativa" name="justificativa" rows="4"></textarea>
+        <br>
+        <label for="aprovacao">Aprovação:</label>
+        <select id="aprovacao" name="aprovacao" required>
+            <option value="aprovado">Aprovação</option>
+            <option value="nao_aprovado">Não Aprovação</option>
+        </select>
+
+        <!-- Fim do formulário HTML -->
+        <input type="submit" value="Enviar Avaliação">
+    </form>
 </div>
-
 {% endblock %}

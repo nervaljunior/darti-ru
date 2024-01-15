@@ -6,12 +6,93 @@
 {% block body %}
 <h1> {{ anexo }} </h1>
 
-{{ form_start(form) }}
-{{ form_row(form.DataAvaliacao) }}
-{{ form_row(form.nota) }}
 
-<button type="submit" class="btn btn-primary">Enviar</button>
-{{ form_end(form) }}
+<style>
+    textarea {
+        width: 400px;
+    }
+</style>
+
+<div class="details">
+    <form id="avaliacaoForm" method="post">
+        <div class="cardHeader">
+            <h2>Avaliação dos Cardápios do Restaurante Universitário</h2>
+        </div>
+
+        <!-- Adicione os campos de avaliação do Anexo 3 aqui -->
+        <h2>Refeição: Almoço (   )   Jantar (   )</h2>
+        <label for="data">Data:</label>
+        <input type="text" id="data" name="data" placeholder="[Insira a data aqui]" required>
+
+        <table>
+            <tr>
+                <th>Preparações</th>
+                <th>Avaliação</th>
+            </tr>
+            <!-- Adicione as linhas da tabela conforme necessário -->
+            <tr>
+                <td>Salada</td>
+                <td><textarea id="avaliacaoSalada" name="avaliacaoSalada" rows="4" placeholder=""></textarea></td>
+            </tr>
+            <tr>
+                <td>Prato Principal</td>
+                <td><textarea id="avaliacaoPratoPrincipal" name="avaliacaoPratoPrincipal" rows="4" placeholder=""></textarea></td>
+            </tr>
+            <!-- Adicione as outras preparações conforme necessário -->
+        </table>
+
+        <h3>Justificativa/Medida Corretiva</h3>
+        <label for="emAcordo">Em acordo com o cardápio</label>
+        <input type="checkbox" id="emAcordo" name="emAcordo">
+        <br>
+        <label for="aprovacao">Aprovação</label>
+        <input type="checkbox" id="aprovacao" name="aprovacao">
+        <div>
+            <label for="aprovacaoSim">Sim</label>
+            <input type="radio" id="aprovacaoSim" name="aprovacaoOpcao" value="sim">
+            <label for="aprovacaoNao">Não</label>
+            <input type="radio" id="aprovacaoNao" name="aprovacaoOpcao" value="nao">
+        </div>
+
+        <label for="fiscalResponsavel">Fiscal Responsável:</label>
+        <input type="text" id="fiscalResponsavel" name="fiscalResponsavel" placeholder="[Insira o nome do fiscal responsável]" required>
+
+        <!-- Adicione outras etapas e critérios conforme necessário -->
+
+        <!-- Fim do formulário HTML -->
+        <input type="submit" value="Enviar Avaliação">
+    </form>
+
+    <h2>Avaliação do Cardápio do Colégio Universitário</h2>
+    <h3>Refeição: Lanche Matutino (    )   Lanche Vespertino (    )</h3>
+    <label for="dataColegio">Data:</label>
+    <input type="text" id="dataColegio" name="dataColegio" placeholder="[Insira a data aqui]" required>
+
+    <table>
+        <tr>
+            <th>Preparação</th>
+            <th>Avaliação</th>
+        </tr>
+        <!-- Adicione as linhas da tabela conforme necessário -->
+        <tr>
+            <td></td>
+            <td><textarea id="avaliacaoColegio" name="avaliacaoColegio" rows="4" placeholder=""></textarea></td>
+        </tr>
+    </table>
+
+    <h3>Justificativa/Medida Corretiva</h3>
+    <label for="emAcordoColegio">Em acordo com o cardápio</label>
+    <input type="checkbox" id="emAcordoColegio" name="emAcordoColegio">
+    <br>
+    <label for="aprovacaoColegio">Aprovação</label>
+    <input type="checkbox" id="aprovacaoColegio" name="aprovacaoColegio">
+    <div>
+        <label for="aprovacaoSimColegio">Sim</label>
+        <input type="radio" id="aprovacaoSimColegio" name="aprovacaoOpcaoColegio" value="sim">
+        <label for="aprovacaoNaoColegio">Não</label>
+        <input type="radio" id="aprovacaoNaoColegio" name="aprovacaoOpcaoColegio" value="nao">
+    </div>
+
+    <!-- Adicione outras etapas e critérios do Colégio conforme necessário -->
 </div>
-
 {% endblock %}

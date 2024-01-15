@@ -6,13 +6,49 @@
 {% block body %}
 <h1> {{ anexo }} </h1>
 
-{{ form_start(form) }}
+<style>
+    textarea {
+        width: 400px;
+    }
+</style>
+<h2>Rotina de Fiscalização do Restaurante Universitário</h2>
 
-{{ form_row(form.DataAvaliacao) }}
-{{ form_row(form.nota) }}
+<div class="details">
+    <form id="fiscalizacaoForm" method="post">
+        <div class="cardHeader">
+            <h2>Restaurante Universitário Central - Setor: Recebimento de Gêneros</h2>
+        </div>
 
-<button type="submit" class="btn btn-primary">Enviar</button>
-{{ form_end(form) }}
+        <ol>
+            <li>
+                <strong>Rotinas Diárias:</strong>
+                <ol>
+                    <li>
+                        <strong>Conferência das Condições Higiênicas da Área de Recebimento:</strong>
+                        <ul>
+                            <li>Avaliação:
+                                <input type="checkbox" name="condicoesAreaRecebimento" value="adequado"> Adequado
+                                <input type="checkbox" name="condicoesAreaRecebimento" value="inadequado"> Inadequado
+                            </li>
+                            <li>Justificativa/Medida Corretiva: <textarea name="justificativaCondicoesAreaRecebimento" rows="4"></textarea></li>
+                        </ul>
+                    </li>
+
+                    <!-- Adicione outros itens conforme necessário -->
+                </ol>
+            </li>
+        </ol>
+
+        <!-- Adicione mais seções conforme necessário -->
+
+        <!-- Fiscal Responsável -->
+        <div>
+            <strong>Fiscal Responsável:</strong>
+            <input type="text" name="fiscalResponsavel" placeholder="Insira o nome do fiscal responsável">
+        </div>
+
+        <!-- Fim do formulário HTML -->
+        <input type="submit" value="Enviar Avaliação">
+    </form>
 </div>
-
 {% endblock %}

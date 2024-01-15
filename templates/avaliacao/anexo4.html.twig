@@ -6,12 +6,38 @@
 {% block body %}
 <h1> {{ anexo }} </h1>
 
-{{ form_start(form) }}
-{{ form_row(form.DataAvaliacao) }}
-{{ form_row(form.nota) }}
 
-<button type="submit" class="btn btn-primary">Enviar</button>
-{{ form_end(form) }}
+<style>
+    textarea {
+        width: 400px;
+    }
+</style>
+<h2>Protocolo de Coleta de Amostras de Alimentos</h2>
+
+<div class="details">
+    <form id="coletaAmostrasForm" method="post">
+        <div class="cardHeader">
+            <h2>Procedimento de Coleta</h2>
+        </div>
+
+        <ol>
+            <li>Proceda à higienização das mãos.</li>
+            <li>Identifique as embalagens de primeiro uso ou sacos esterilizados/desinfetados com o nome do estabelecimento, nome do produto, data, horário e nome do responsável pela coleta.</li>
+            <li>Abra a embalagem ou o saco sem tocá-lo internamente e sem soprá-lo.</li>
+            <li>Coloque a amostra do alimento, garantindo no mínimo 100 (cem) gramas.</li>
+            <li>Utilize uma embalagem separada para cada tipo de preparação.</li>
+            <li>Se possível, retire o ar da embalagem e feche-a.</li>
+            <li>Guarde a amostra por 72 (setenta e duas) horas, observando as temperaturas a seguir:</li>
+        </ol>
+
+        <ul>
+            <li>Alimentos distribuídos sob refrigeração: Máximo 4º C (quatro graus Celsius)</li>
+            <li>Alimentos distribuídos quentes: Sob congelamento a -18ºC (dezoito graus Celsius negativos)</li>
+            <li>Alimentos líquidos: Sob refrigeração a 4º C (quatro graus Celsius)</li>
+        </ul>
+
+        <!-- Fim do formulário HTML -->
+        <input type="submit" value="Enviar Protocolo">
+    </form>
 </div>
-
 {% endblock %}

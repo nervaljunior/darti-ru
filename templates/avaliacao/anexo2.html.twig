@@ -4,14 +4,85 @@
 {% block title %}Avaliação {{ anexo }}{% endblock %}
 
 {% block body %}
-<h1> {{ anexo }} </h1>
+<style>
+    textarea {
+        width: 400px;
+    }
+</style>
+<h1>{{ anexo }}</h1>
 
-{{ form_start(form) }}
-{{ form_row(form.DataAvaliacao) }}
-{{ form_row(form.nota) }}
+<div class="details">
+    <form id="avaliacaoForm" method="post">
+        <div class="cardHeader">
+            <h2>Critérios de Temperatura e Tempo no Restaurante Universitário</h2>
+        </div>
 
-<button type="submit" class="btn btn-primary">Enviar</button>
-{{ form_end(form) }}
+        <!-- Adicione os campos de avaliação do Anexo 2 aqui -->
+        <h2>Temperaturas e Tempo</h2>
+        <table>
+            <tr>
+                <th>Etapas</th>
+                <th>Temperatura</th>
+                <th>Tempo</th>
+            </tr>
+            <!-- Adicione as linhas da tabela conforme necessário -->
+            <tr>
+                <td>Temperaturas de Armazenamento de Alimentos Preparados - Refrigerados</td>
+                <td><input type="text" id="temperaturaRefrigerados" name="temperaturaRefrigerados" readonly value="5ºC"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Temperaturas de Armazenamento de Alimentos Preparados - Congelados</td>
+                <td><input type="text" id="temperaturaCongelados" name="temperaturaCongelados" readonly value="-18ºC"></td>
+                <td></td>
+            </tr>
+            <!-- Adicione as outras etapas conforme necessário -->
+        </table>
+
+        <!-- Adicione as tabelas de prazo de validade para produtos congelados e refrigerados -->
+        <h2>Prazo de Validade para Produtos Congelados</h2>
+        <table>
+            <tr>
+                <th>Temperatura Recomendada (Graus Celsius)</th>
+                <th>Prazo de Validade (Dias)</th>
+            </tr>
+            <!-- Adicione as linhas da tabela conforme necessário -->
+            <tr>
+                <td>0 a -5</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>-6 a -10</td>
+                <td>20</td>
+            </tr>
+            <!-- Adicione as outras temperaturas conforme necessário -->
+        </table>
+
+        <h2>Prazo de Validade para Produtos Refrigerados</h2>
+        <table>
+            <tr>
+                <th>Produtos Resfriados</th>
+                <th>Temperatura Recomendada (Graus Celsius)</th>
+                <th>Prazo de Validade (Dias)</th>
+            </tr>
+            <!-- Adicione as linhas da tabela conforme necessário -->
+            <tr>
+                <td>Pescados e seus produtos</td>
+                <td>Máximo 2(dois graus)</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Manipulados crus.</td>
+                <td>Máximo 2(dois graus)</td>
+                <td>1</td>
+            </tr>
+            <!-- Adicione as outras categorias conforme necessário -->
+        </table>
+
+        <!-- Adicione outras etapas e critérios específicos conforme necessário -->
+
+        <!-- Fim do formulário HTML -->
+        <input type="submit" value="Enviar Avaliação">
+    </form>
 </div>
-
 {% endblock %}

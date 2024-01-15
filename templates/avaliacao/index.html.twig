@@ -230,30 +230,7 @@
                          'insatisfatorio'
         %}
         
-            <form id="" method="post">
-                <div class="cardHeader">
-                    <h2>Avaliação de Alimento</h2>
-                </div>
-                    <label for="alimentName">Nome do Alimento:</label>
-                    <input type="text" id="alimentName" name="alimentName" value="<?php echo $rowAlimento['nome']; ?>" readonly>
-                    <br>
-                    <label for="alimentCategory">Categoria:</label>
-                    <input type="text" id="alimentCategory" name="alimentCategory" value="<?php echo $rowAlimento['categoria']; ?>" readonly>
-                    <br>
-                    <label for="avaliacao">Avaliação:</label>
-                    <select id="avaliacao" name="avaliacao" required>
-                        <option value="excelente">Excelente</option>
-                        <option value="bom">Bom</option>
-                        <option value="regular">Regular</option>
-                        <option value="ruim">Ruim</option>
-                    </select>
-                    <br>
-                    <label for="observacoes">Observações:</label>
-                    <textarea id="observacoes" name="observacoes" rows="4"></textarea>
-                    <input type="hidden" name="id_alimento" value="<?php echo $id_alimento; ?>">
-                    <br>
-                    <input type="submit" value="Enviar Avaliação">
-            </form>    
+  
     
             
         <div class="caixa {{ classe }}">{{ mensagem }}</div>
